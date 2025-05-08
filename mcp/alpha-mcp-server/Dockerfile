@@ -9,7 +9,7 @@ RUN --mount=type=cache,target=/root/.yarn yarn --frozen-lockfile
 FROM deps AS builder
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
-COPY . .
+COPY mcp/alpha-mcp-server/ .
 RUN yarn build
 
 FROM deps AS runner
