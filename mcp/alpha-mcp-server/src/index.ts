@@ -1,11 +1,12 @@
-import express from 'express';
-import { z } from 'zod';
+import express from "express";
+import { z } from "zod";
 
-import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
-import { SSEServerTransport } from '@modelcontextprotocol/sdk/server/sse.js';
+import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
+import { SSEServerTransport } from "@modelcontextprotocol/sdk/server/sse.js";
 
-import { makeNWSRequest } from './helpers';
+import { makeNWSRequest } from "./helpers";
 
+const PORT = process.env.PORT ?? 5000;
 const app = express();
 
 const NWS_API_BASE = "https://alpha-api.nexdev.net/api";
@@ -152,6 +153,6 @@ app.get("/health", (req, res) => {
   res.status(200).send("OK");
 });
 
-app.listen(3000, () => {
-  console.log("Server is running on port 3000");
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });
