@@ -1,28 +1,17 @@
-import express from "express";
-import { z } from "zod";
+import express from 'express';
+import { z } from 'zod';
 
-import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
-import { SSEServerTransport } from "@modelcontextprotocol/sdk/server/sse.js";
+import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
+import { SSEServerTransport } from '@modelcontextprotocol/sdk/server/sse.js';
 
-import { makeNWSRequest } from "./helpers";
+import { makeNWSRequest } from './helpers';
 
 const PORT = process.env.PORT ?? 5000;
 const app = express();
 
 const NWS_API_BASE = "https://alpha-api.nexdev.net/api";
 
-// Create server instance
-const server = new McpServer({
-  name: "alpha-mcp-server",
-  version: "1.0.0",
-  capabilities: {
-    resources: {},
-    tools: {},
-  },
-});
-
-let transport: SSEServerTransport | null = null;
-
+// Define interfaces
 interface OutStanding {
   superOutstanding: number;
   masterOutstanding: number;
@@ -48,6 +37,7 @@ interface BalanceInfoResponse {
   directMemberCredit: string;
 }
 
+// Helper functions
 const getRoleName = (roleId: number) => {
   switch (roleId) {
     case 4:
@@ -58,6 +48,8 @@ const getRoleName = (roleId: number) => {
       return "Agent";
     case 1:
       return "Member";
+    default:
+      return "Unknown";
   }
 };
 
@@ -71,6 +63,8 @@ const getOutstanding = (outstanding: OutStanding, roleId: number) => {
       return outstanding.agentOutstanding;
     case 1:
       return outstanding.memberOutstanding;
+    default:
+      return 0;
   }
 };
 
@@ -82,14 +76,14 @@ const formatBalanceInfo = (data: BalanceInfoResponse, roleId: number) => {
     `Balance: ${data.totalBalance.toFixed(2) || "Unknown"}`,
     `Yesterday Balance: ${data.yesterdayTotalBalance.toFixed(2) || "Unknown"}`,
     `Today Win/Loss: ${data.todayWinLoss.toFixed(2) || "Unknown"}`,
-    `Yesterday Win/Loss: ${data.yesterdayWinLoss || "Unknown"}`,
+    `Yesterday Win/Loss: ${data.yesterdayWinLoss.toFixed(2) || "Unknown"}`,
     `3rd Party Pending Transfer: ${
       data.pendingTransfer3rd.toFixed(2) || "Unknown"
     }`,
     `Given Credit: ${data.givenCredit || "Unknown"}`,
     `${getRoleName(roleId - 1)} Credit: ${data.memberCredit || "Unknown"}`,
     `Member Outstanding: ${data.outstanding.memberOutstanding || "Unknown"}`,
-    `${getRoleName(roleId)} OutStanding: ${
+    `${getRoleName(roleId)} Outstanding: ${
       getOutstanding(data.outstanding, roleId)?.toFixed(2) ?? "Unknown"
     }`,
     `Reward Receivable: ${data.rewardCurrency} ${
@@ -102,12 +96,47 @@ const formatBalanceInfo = (data: BalanceInfoResponse, roleId: number) => {
   ].join("\n");
 };
 
+// Create server instance with explicit tool registration
+const server = new McpServer({
+  name: "alpha-mcp-server",
+  version: "1.0.0",
+  capabilities: {
+    resources: {},
+    tools: {
+      "get-balance-info": {
+        description:
+          "Retrieves detailed balance information for a specific customer and role.",
+        parameters: {
+          type: "object",
+          properties: {
+            custId: {
+              type: "number",
+              description: "Customer ID",
+              minimum: 1,
+            },
+            roleId: {
+              type: "number",
+              description: "Customer Role ID",
+              minimum: 1,
+              maximum: 4,
+            },
+          },
+          required: ["custId", "roleId"],
+        },
+      },
+    },
+  },
+});
+
+let transport: SSEServerTransport | null = null;
+
+// Register the tool handler
 server.tool(
   "get-balance-info",
-  "request to  retrieve the balance details for a specific customer and role",
+  "Retrieves detailed balance information for a specific customer and role.",
   {
-    custId: z.number().min(1).describe("customer id"),
-    roleId: z.number().min(1).max(4).describe("customer role id"),
+    custId: z.number().min(1).describe("Customer ID"),
+    roleId: z.number().min(1).max(4).describe("Customer Role ID"),
   },
   async ({ custId, roleId }) => {
     const url = `${NWS_API_BASE}/BalanceInfo/GetCustomerBalance?custId=${custId}&custLevelId=${roleId}`;
@@ -138,6 +167,7 @@ server.tool(
   }
 );
 
+// Express routes
 app.get("/sse", (req, res) => {
   transport = new SSEServerTransport("/messages", res);
   server.connect(transport);
@@ -146,6 +176,8 @@ app.get("/sse", (req, res) => {
 app.post("/messages", (req, res) => {
   if (transport) {
     transport.handlePostMessage(req, res);
+  } else {
+    res.status(500).send("Transport not initialized.");
   }
 });
 
