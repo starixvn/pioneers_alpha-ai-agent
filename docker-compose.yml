@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  alpha-mcp-server:
+    build:
+      context: .
+      dockerfile: mcp/alpha-mcp-server/Dockerfile
+    ports:
+      - "5000:5000"
+    environment:
+      - NODE_ENV=production
+      - PORT=5000
