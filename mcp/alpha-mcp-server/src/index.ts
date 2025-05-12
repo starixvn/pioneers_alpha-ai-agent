@@ -1,100 +1,17 @@
-import express from 'express';
-import { z } from 'zod';
+import express from "express";
+import { z } from "zod";
 
-import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
-import { SSEServerTransport } from '@modelcontextprotocol/sdk/server/sse.js';
+import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
+import { SSEServerTransport } from "@modelcontextprotocol/sdk/server/sse.js";
 
-import { makeNWSRequest } from './helpers';
+import { BalanceInfoResponse, formatBalanceInfo } from "./balance-info";
+import { makeNWSRequest } from "./helpers";
+import { formatWinLoss, WinLossResponse } from "./win-loss";
 
 const PORT = process.env.PORT ?? 5000;
 const app = express();
 
 const NWS_API_BASE = "https://alpha-api.nexdev.net/api";
-
-// Define interfaces
-interface OutStanding {
-  superOutstanding: number;
-  masterOutstanding: number;
-  agentOutstanding: number;
-  memberOutstanding: number;
-}
-
-interface BalanceInfoResponse {
-  currencyName: string;
-  cashBalance: number;
-  yesterdayCashBalance: number;
-  totalBalance: number;
-  yesterdayTotalBalance: number;
-  todayWinLoss: number;
-  yesterdayWinLoss: number;
-  givenCredit: number;
-  memberCredit: number;
-  pendingTransfer3rd: number;
-  outstanding: OutStanding;
-  rewardReceivable: number;
-  rewardPayable: number;
-  rewardCurrency: string;
-  directMemberCredit: string;
-}
-
-// Helper functions
-const getRoleName = (roleId: number) => {
-  switch (roleId) {
-    case 4:
-      return "Super";
-    case 3:
-      return "Master";
-    case 2:
-      return "Agent";
-    case 1:
-      return "Member";
-    default:
-      return "Unknown";
-  }
-};
-
-const getOutstanding = (outstanding: OutStanding, roleId: number) => {
-  switch (roleId) {
-    case 4:
-      return outstanding.superOutstanding;
-    case 3:
-      return outstanding.masterOutstanding;
-    case 2:
-      return outstanding.agentOutstanding;
-    case 1:
-      return outstanding.memberOutstanding;
-    default:
-      return 0;
-  }
-};
-
-const formatBalanceInfo = (data: BalanceInfoResponse, roleId: number) => {
-  return [
-    `Currency: ${data.currencyName || "Unknown"}`,
-    `Cash: ${data.cashBalance.toFixed(2) || "Unknown"}`,
-    `Yesterday Cash: ${data.yesterdayCashBalance.toFixed(2) || "Unknown"}`,
-    `Balance: ${data.totalBalance.toFixed(2) || "Unknown"}`,
-    `Yesterday Balance: ${data.yesterdayTotalBalance.toFixed(2) || "Unknown"}`,
-    `Today Win/Loss: ${data.todayWinLoss.toFixed(2) || "Unknown"}`,
-    `Yesterday Win/Loss: ${data.yesterdayWinLoss.toFixed(2) || "Unknown"}`,
-    `3rd Party Pending Transfer: ${
-      data.pendingTransfer3rd.toFixed(2) || "Unknown"
-    }`,
-    `Given Credit: ${data.givenCredit || "Unknown"}`,
-    `${getRoleName(roleId - 1)} Credit: ${data.memberCredit || "Unknown"}`,
-    `Member Outstanding: ${data.outstanding.memberOutstanding || "Unknown"}`,
-    `${getRoleName(roleId)} Outstanding: ${
-      getOutstanding(data.outstanding, roleId)?.toFixed(2) ?? "Unknown"
-    }`,
-    `Reward Receivable: ${data.rewardCurrency} ${
-      data.rewardReceivable.toFixed(2) || "Unknown"
-    }`,
-    `Reward Payable: ${data.rewardCurrency} ${
-      data.rewardPayable.toFixed(2) || "Unknown"
-    }`,
-    "---",
-  ].join("\n");
-};
 
 // Create server instance with explicit tool registration
 const server = new McpServer({
@@ -122,6 +39,31 @@ const server = new McpServer({
             },
           },
           required: ["custId", "roleId"],
+        },
+      },
+      "get-win-loss": {
+        description:
+          "Retrieves detailed win/loss information for a specific customer and role in a specific date.",
+        parameters: {
+          type: "object",
+          properties: {
+            custId: {
+              type: "number",
+              description: "Customer ID",
+              minimum: 1,
+            },
+            roleId: {
+              type: "number",
+              description: "Customer Role ID",
+              minimum: 1,
+              maximum: 4,
+            },
+            date: {
+              type: "string",
+              description: "Date in format YYYY-MM-DD",
+            },
+          },
+          required: ["custId", "roleId", "date"],
         },
       },
     },
@@ -161,6 +103,36 @@ server.tool(
         {
           type: "text",
           text: balanceInfoText,
+        },
+      ],
+    };
+  }
+);
+
+server.tool(
+  "get-win-loss",
+  "Retrieves detailed win/loss information for a specific customer and role in a specific date.",
+  {
+    custId: z.number().min(1).describe("Customer ID"),
+    roleId: z.number().min(1).max(4).describe("Customer Role ID"),
+    date: z.string().describe("Date in format YYYY-MM-DD"),
+  },
+  async ({ custId, roleId, date }) => {
+    const url = `${NWS_API_BASE}/WinLoss/GetCustomerWinLoss?custId=${custId}&custLevelId=${roleId}&date=${date}`;
+    const data = await makeNWSRequest<WinLossResponse>(url);
+
+    if (!data) {
+      return {
+        content: [{ type: "text", text: "Failed to retrieve win/loss info" }],
+      };
+    }
+    const formattedWinLoss = formatWinLoss(data, roleId);
+    const winLossText = `Your Win/Loss info:\n\n${formattedWinLoss}`;
+    return {
+      content: [
+        {
+          type: "text",
+          text: winLossText,
         },
       ],
     };

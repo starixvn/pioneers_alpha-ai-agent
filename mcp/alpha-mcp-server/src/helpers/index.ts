@@ -20,4 +20,19 @@ async function makeNWSRequest<T>(url: string): Promise<T | null> {
   }
 }
 
-export { makeNWSRequest };
+const getRoleName = (roleId: number) => {
+  switch (roleId) {
+    case 4:
+      return "Super";
+    case 3:
+      return "Master";
+    case 2:
+      return "Agent";
+    case 1:
+      return "Member";
+    default:
+      return "Unknown";
+  }
+};
+
+export { makeNWSRequest, getRoleName };
