@@ -118,7 +118,7 @@ server.tool(
     date: z.string().describe("Date in format YYYY-MM-DD"),
   },
   async ({ custId, roleId, date }) => {
-    const url = `${NWS_API_BASE}/WinLoss/GetCustomerWinLoss?custId=${custId}&custLevelId=${roleId}&date=${date}`;
+    const url = `${NWS_API_BASE}/WinLoss/GetWinLoss?custId=${custId}&custLevelId=${roleId}&date=${date}`;
     const data = await makeNWSRequest<WinLossResponse>(url);
 
     if (!data) {
