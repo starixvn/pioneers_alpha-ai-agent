@@ -1,20 +1,9 @@
-export interface WinLossResponse {
-  superWinLoss: number;
-  superComm: number;
-  superTotal: number;
-  companyWinLoss: number;
-  turnover: number;
-  grossComm: number;
-  masterWinLoss: number;
-  masterComm: number;
-  masterTotal: number;
-  agentWinLoss: number;
-  agentComm: number;
-  agentTotal: number;
-  memberWinLoss: number;
-  memberComm: number;
-  memberTotal: number;
-}
+import { z } from "zod";
+
+import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
+
+import { makeNWSRequest } from "../../helpers";
+import { WinLossResponse } from "./types";
 
 const formatMasterWinLoss = (data: WinLossResponse) => {
   return [
@@ -65,7 +54,7 @@ const formatMemberDownlineWinLoss = (data: WinLossResponse) => {
   ].join("\n");
 };
 
-export const formatWinLoss = (data: WinLossResponse, roleId: number) => {
+const formatWinLoss = (data: WinLossResponse, roleId: number) => {
   switch (roleId) {
     case 4:
       return formatMasterWinLoss(data);
@@ -77,3 +66,38 @@ export const formatWinLoss = (data: WinLossResponse, roleId: number) => {
       return formatMemberDownlineWinLoss(data);
   }
 };
+
+export default function registerGetWinLossTool(
+  server: McpServer,
+  NWS_API_BASE: string
+) {
+  server.tool(
+    "get-win-loss",
+    "Retrieves detailed win/loss information for a specific customer and role in a specific date.",
+    {
+      custId: z.number().min(1).describe("Customer ID"),
+      roleId: z.number().min(1).max(4).describe("Customer Role ID"),
+      date: z.string().min(1).describe("Date in YYYY-MM-DD format"),
+    },
+    async ({ custId, roleId, date }) => {
+      const url = `${NWS_API_BASE}/WinLoss/GetWinLoss?custId=${custId}&custLevelId=${roleId}&date=${date}`;
+      const data = await makeNWSRequest<WinLossResponse>(url);
+
+      if (!data) {
+        return {
+          content: [{ type: "text", text: "Failed to retrieve win/loss info" }],
+        };
+      }
+      const formattedWinLoss = formatWinLoss(data, roleId);
+      const winLossText = `Your Win/Loss info:\n\n${formattedWinLoss}`;
+      return {
+        content: [
+          {
+            type: "text",
+            text: winLossText,
+          },
+        ],
+      };
+    }
+  );
+}

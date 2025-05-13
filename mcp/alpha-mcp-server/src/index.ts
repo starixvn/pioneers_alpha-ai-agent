@@ -1,17 +1,12 @@
 import express from "express";
-import { z } from "zod";
 
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { SSEServerTransport } from "@modelcontextprotocol/sdk/server/sse.js";
 
-import { BalanceInfoResponse, formatBalanceInfo } from "./balance-info";
-import { makeNWSRequest } from "./helpers";
-import { formatWinLoss, WinLossResponse } from "./win-loss";
+import registerTools from "./tools";
 
 const PORT = process.env.PORT ?? 5000;
 const app = express();
-
-const NWS_API_BASE = "https://alpha-api.nexdev.net/api";
 
 // Create server instance with explicit tool registration
 const server = new McpServer({
@@ -73,71 +68,7 @@ const server = new McpServer({
 let transport: SSEServerTransport | null = null;
 
 // Register the tool handler
-server.tool(
-  "get-balance-info",
-  "Retrieves detailed balance information for a specific customer and role.",
-  {
-    custId: z.number().min(1).describe("Customer ID"),
-    roleId: z.number().min(1).max(4).describe("Customer Role ID"),
-  },
-  async ({ custId, roleId }) => {
-    const url = `${NWS_API_BASE}/BalanceInfo/GetCustomerBalance?custId=${custId}&custLevelId=${roleId}`;
-    const data = await makeNWSRequest<BalanceInfoResponse>(url);
-
-    if (!data) {
-      return {
-        content: [
-          {
-            type: "text",
-            text: "Failed to retrieve balance info",
-          },
-        ],
-      };
-    }
-
-    const formattedBalanceInfo = formatBalanceInfo(data, roleId);
-    const balanceInfoText = `Your balance info:\n\n${formattedBalanceInfo}`;
-
-    return {
-      content: [
-        {
-          type: "text",
-          text: balanceInfoText,
-        },
-      ],
-    };
-  }
-);
-
-server.tool(
-  "get-win-loss",
-  "Retrieves detailed win/loss information for a specific customer and role in a specific date.",
-  {
-    custId: z.number().min(1).describe("Customer ID"),
-    roleId: z.number().min(1).max(4).describe("Customer Role ID"),
-    date: z.string().describe("Date in format YYYY-MM-DD"),
-  },
-  async ({ custId, roleId, date }) => {
-    const url = `${NWS_API_BASE}/WinLoss/GetWinLoss?custId=${custId}&custLevelId=${roleId}&date=${date}`;
-    const data = await makeNWSRequest<WinLossResponse>(url);
-
-    if (!data) {
-      return {
-        content: [{ type: "text", text: "Failed to retrieve win/loss info" }],
-      };
-    }
-    const formattedWinLoss = formatWinLoss(data, roleId);
-    const winLossText = `Your Win/Loss info:\n\n${formattedWinLoss}`;
-    return {
-      content: [
-        {
-          type: "text",
-          text: winLossText,
-        },
-      ],
-    };
-  }
-);
+registerTools(server);
 
 // Express routes
 app.get("/sse", (req, res) => {
@@ -158,5 +89,5 @@ app.get("/health", (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+  console.log(`Server is running on http://localhost:${PORT}`);
 });

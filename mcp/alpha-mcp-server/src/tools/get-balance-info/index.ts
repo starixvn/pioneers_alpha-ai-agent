@@ -1,29 +1,9 @@
-import { getRoleName } from "../helpers";
+import { z } from "zod";
 
-export interface OutStanding {
-  superOutstanding: number;
-  masterOutstanding: number;
-  agentOutstanding: number;
-  memberOutstanding: number;
-}
+import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 
-export interface BalanceInfoResponse {
-  currencyName: string;
-  cashBalance: number;
-  yesterdayCashBalance: number;
-  totalBalance: number;
-  yesterdayTotalBalance: number;
-  todayWinLoss: number;
-  yesterdayWinLoss: number;
-  givenCredit: number;
-  memberCredit: number;
-  pendingTransfer3rd: number;
-  outstanding: OutStanding;
-  rewardReceivable: number;
-  rewardPayable: number;
-  rewardCurrency: string;
-  directMemberCredit: string;
-}
+import { getRoleName, makeNWSRequest } from "../../helpers";
+import { BalanceInfoResponse, OutStanding } from "./types";
 
 const getOutstanding = (outstanding: OutStanding, roleId: number) => {
   switch (roleId) {
@@ -40,10 +20,7 @@ const getOutstanding = (outstanding: OutStanding, roleId: number) => {
   }
 };
 
-export const formatBalanceInfo = (
-  data: BalanceInfoResponse,
-  roleId: number
-) => {
+const formatBalanceInfo = (data: BalanceInfoResponse, roleId: number) => {
   return [
     `Currency: ${data.currencyName || "Unknown"}`,
     `Cash: ${data.cashBalance.toFixed(2) || "Unknown"}`,
@@ -70,3 +47,44 @@ export const formatBalanceInfo = (
     "---",
   ].join("\n");
 };
+
+export default function registerGetBalanceInfoTool(
+  server: McpServer,
+  NWS_API_BASE: string
+) {
+  server.tool(
+    "get-balance-info",
+    "Retrieves detailed balance information for a specific customer and role.",
+    {
+      custId: z.number().min(1).describe("Customer ID"),
+      roleId: z.number().min(1).max(4).describe("Customer Role ID"),
+    },
+    async ({ custId, roleId }) => {
+      const url = `${NWS_API_BASE}/BalanceInfo/GetCustomerBalance?custId=${custId}&custLevelId=${roleId}`;
+      const data = await makeNWSRequest<BalanceInfoResponse>(url);
+
+      if (!data) {
+        return {
+          content: [
+            {
+              type: "text",
+              text: "Failed to retrieve balance info",
+            },
+          ],
+        };
+      }
+
+      const formattedBalanceInfo = formatBalanceInfo(data, roleId);
+      const balanceInfoText = `Your balance info:\n\n${formattedBalanceInfo}`;
+
+      return {
+        content: [
+          {
+            type: "text",
+            text: balanceInfoText,
+          },
+        ],
+      };
+    }
+  );
+}
