@@ -36,6 +36,34 @@ const server = new McpServer({
           required: ["custId", "roleId"],
         },
       },
+      "get-top-balance": {
+        description:
+          "Retrieves a list of accounts that have highest balance amount for a specific customer and role.",
+        parameters: {
+          type: "object",
+          properties: {
+            custId: {
+              type: "number",
+              description: "Customer ID",
+              minimum: 1,
+            },
+            roleId: {
+              type: "number",
+              description: "Customer Role ID",
+              minimum: 1,
+              maximum: 4,
+            },
+            top: {
+              type: "number",
+              description: "Number of top accounts to retrieve",
+              minimum: 1,
+              maximum: 1000,
+              default: 10,
+            },
+          },
+          required: ["custId", "roleId"],
+        },
+      },
       "get-win-loss": {
         description:
           "Retrieves detailed win/loss information for a specific customer and role in a specific date.",
