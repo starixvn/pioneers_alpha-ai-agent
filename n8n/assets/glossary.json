@@ -1,0 +1,1570 @@
+[
+    {
+        "Term": "1x2",
+        "Description": "betting on which team is the winner or a draw, with no special conditions."
+    },
+    {
+        "Term": "account info",
+        "Description": "\"account info\" enables uplines to search and handle information and settings of their downlines."
+    },
+    {
+        "Term": "accumulated balance",
+        "Description": "the overall win/loss of an account from its creation date to a specified date."
+    },
+    {
+        "Term": "accumulated total",
+        "Description": "the final balance at the end of each day"
+    },
+    {
+        "Term": "actual stake        ",
+        "Description": "total stake placed on a ticket"
+    },
+    {
+        "Term": "adjustment",
+        "Description": "the amount used to adjust the balance."
+    },
+    {
+        "Term": "agency api",
+        "Description": "\"agency api\" offers access to reports tailored to user\u2019s specific needs through its api service."
+    },
+    {
+        "Term": "all day balance transfer",
+        "Description": "\"all day balance transfer\" (adbt) facilitates the transaction process by allowing for an unlimited number of transactions per day."
+    },
+    {
+        "Term": "agency telegram chatbot",
+        "Description": "\"telegram chatbot\" enables you to get up-to-date business information by communicating with the chatbot without accessing to the agency site. the chatbot runs on telegram \u2013 a free, secured, encrypted, and cross-platform instant message application."
+    },
+    {
+        "Term": "agent list",
+        "Description": "\"agent list\" displays a list of all downline agents, and members together with their information and settings (general info, bet settings, commissions, etc.), providing a better overview of downlines' settings and simplifying configurations. furthermore, agent list offers access to downlines' daily statement reports for better insights."
+    },
+    {
+        "Term": "agent outstanding",
+        "Description": "\"agent outstanding\" shows members' turnover amount of all running tickets and master's shared amount based on position taking percentage."
+    },
+    {
+        "Term": "alternative corners",
+        "Description": "betting on the total number of corners taken by both team after the regular playtime."
+    },
+    {
+        "Term": "auto transfer",
+        "Description": "\"auto transfer\" automates the process of transferring yesterday's balance (ytb) between you and your direct downlines."
+    },
+    {
+        "Term": "available domains",
+        "Description": "\"available domains\" provides a repository for backup domains at both the agency and member levels, ready to be retrieved when necessary."
+    },
+    {
+        "Term": "away team exact corners",
+        "Description": "betting on the exact number of corners taken by away team after regular time of play."
+    },
+    {
+        "Term": "away team highest scoring half",
+        "Description": "betting on which half of the match the away team will score the most goals."
+    },
+    {
+        "Term": "away team player sent off",
+        "Description": "betting on which away player will receive a red card in a regular-time match."
+    },
+    {
+        "Term": "away first half to score/second half to score",
+        "Description": "betting on whether the away team will score in the first half or the second half of the match."
+    },
+    {
+        "Term": "away to win both halves",
+        "Description": "betting on whether the away team will score more goals than their opponent in both halves."
+    },
+    {
+        "Term": "away to win either half",
+        "Description": "betting on whether the away team will score more goals than their opponent in either the first or second half."
+    },
+    {
+        "Term": "away to score in both halves\n",
+        "Description": "betting on whether the away team will score at least one goal in each half of the match in '90 minutes' play.\n"
+    },
+    {
+        "Term": "away no bet",
+        "Description": "betting on either a draw or the home team to win. if the away team wins, the bet ticket gets refunded."
+    },
+    {
+        "Term": "bet        ",
+        "Description": "placing money on an accurate outcome prediction."
+    },
+    {
+        "Term": "bet choice matching",
+        "Description": "\"bet choice matching\" is a report to check if a player has placed multiple bet tickets on the same bet combination, including event, bet type, bet choice, and handicap value."
+    },
+    {
+        "Term": "bet count ",
+        "Description": "the total number of tickets placed by member."
+    },
+    {
+        "Term": "bet credit        ",
+        "Description": "the available credit for a member to place bets."
+    },
+    {
+        "Term": "bet credit tracking",
+        "Description": "\"bet credit tracking\" helps agents accurately track member\u2019s bet credit history and moved settled tickets for a selected period."
+    },
+    {
+        "Term": "bet limit        ",
+        "Description": "the minimum and maximum amount that a member can place per bet."
+    },
+    {
+        "Term": "bet lists",
+        "Description": "\"bet lists\" offers a detailed breakdown of your betting history, presenting important information about your bet tickets including the time each ticket is placed, its bet choice, odds, stake, win/loss, status, and commission."
+    },
+    {
+        "Term": "bets & forecast",
+        "Description": "\"bets & forecast\" function summarizes major soccer bet types, number of tickets, and ticket details (stakes, odds, etc.) on running tickets for each event. it also predicts the win/loss amount on these tickets based on the current score and displays the total forecast win loss of each event."
+    },
+    {
+        "Term": "bonus        ",
+        "Description": "free credit is offered for various reasons, such as attracting new customers, rewarding existing ones, and promoting specific events."
+    },
+    {
+        "Term": "bonus detail",
+        "Description": "\"bonus detail\" provides the details of bonus payments that are used to encourage player\u2019s participation."
+    },
+    {
+        "Term": "booking",
+        "Description": "a booking refers to the issuance of yellow or red cards to players during the match."
+    },
+    {
+        "Term": "both/one/neither team to score",
+        "Description": "this bet type presents three choices:\n- both: predicts both teams to score at least one goal in the match.\n- one: predicts either team to score at least one goal in the match.\n- neither: predicts both teams not to score in the match."
+    },
+    {
+        "Term": "both teams to score",
+        "Description": "betting on whether both teams will score in a match."
+    },
+    {
+        "Term": "both teams to score in first half\n",
+        "Description": "betting on whether both teams will score in the first half of a match."
+    },
+    {
+        "Term": "both teams to score in second half\n",
+        "Description": "betting on whether both teams will score in the second half of a match."
+    },
+    {
+        "Term": "both teams to score in 1st and/or 2nd half\n",
+        "Description": "betting on whether both teams will score in both halves of the match."
+    },
+    {
+        "Term": "both teams to score/total goals & 1st half both teams to score/total goals\n",
+        "Description": "betting on the total number of goals in the match and whether both teams will score."
+    },
+    {
+        "Term": "both teams to score/result ",
+        "Description": "betting on:\n(a) whether both teams will score, and\n(b) whether the match will end in a home win, away win, or draw."
+    },
+    {
+        "Term": "canadian",
+        "Description": "a canadian (or super yankee) consists of 26 separate bets, including:\n- 10 double bets\n- 10 treble bets\n- 5 fourfold accumulator bets\n- 1 fivefold accumulator bet\nat least two selections must win to gain a return."
+    },
+    {
+        "Term": "cash balance        ",
+        "Description": "the total win/loss amount, including transfer transactions."
+    },
+    {
+        "Term": "cancelled bets",
+        "Description": "tickets that are voided, rejected, or refunded."
+    },
+    {
+        "Term": "clean sheet",
+        "Description": "betting on whether a team will maintain a clean sheet throughout an entire match."
+    },
+    {
+        "Term": "closing balance",
+        "Description": "the total funds at the end of the day."
+    },
+    {
+        "Term": "commission (comm)",
+        "Description": "the bonus amount received and counted on member's tickets."
+    },
+    {
+        "Term": "commission by bet type",
+        "Description": "the net commission of super, master, and agent for each member in different groups of bet types/game types in the selected period."
+    },
+    {
+        "Term": "continent of head coach winner\n",
+        "Description": "betting on whether the continent of origin of the head coach of the team will win the title."
+    },
+    {
+        "Term": "corner highest scoring half\n",
+        "Description": "betting on which half of the match will have a greater number of corners.\nfor this bet type, the following options are available: 1h, 2h, and tie.\nif the match is abandoned, any half with most corners bets will only be settled if the result is unconditionally determined and any further corners have no effect on the market result. in all other scenarios, bets will be considered voided."
+    },
+    {
+        "Term": "corner highest scoring half (2 way)\n",
+        "Description": "betting on which half of the match will have more corners.\nfor this bet type, the following options are available: 1h and 2h.\nif the result at the end of both halves is a draw, all bets will be refunded."
+    },
+    {
+        "Term": "corners race",
+        "Description": "betting on which team will reach the quoted number of corners first. "
+    },
+    {
+        "Term": "corner 3-way handicap",
+        "Description": "settlement will be based on the displayed odds using the actual corners in the match, adjusted for the handicap."
+    },
+    {
+        "Term": "corner 1st half 3-way handicap",
+        "Description": "settlement will be based on the displayed odds using the actual corners in the first half of a match, adjusted for the handicap."
+    },
+    {
+        "Term": "corner selection",
+        "Description": "a corner is determined based on the event time reported by the company\u2019s data provider, rather than the precise moment the corner is taken."
+    },
+    {
+        "Term": "correct score",
+        "Description": "betting on the final score/result of the match (e.g. 0 \u2013 0; 0 \u2013 1; 1 \u2013 1; etc.)"
+    },
+    {
+        "Term": "correct quarter odd/even\n",
+        "Description": "betting on whether the last digit of the total points scored in each quarter of the game is odd or even."
+    },
+    {
+        "Term": "dead ball        ",
+        "Description": "all betting activities when the event or match has not yet started."
+    },
+    {
+        "Term": "dead heat        ",
+        "Description": "dead heat is when two or more competitors of a match/event/tournament are tied for the same winning position. in this case, the odds will be divided by the number of people who finish tied. for example, if you bet $50 on a competitor to have the best score among the group of 3 at the odds of 2.5. the event ends with 2 competitors tying for the best score. then the odd will be split in half (2.5 / 2) which is 1.25. your payout will be $50 * 1.25 = $62.5."
+    },
+    {
+        "Term": "decimal odds        ",
+        "Description": "the decimal odds number indicates the winnings for each $1 wagered. decimal odds display the total payout, which includes the initial stake in the number shown."
+    },
+    {
+        "Term": "dormant account list",
+        "Description": "\"dormant account list\" is a list that contains information related to inactive accounts at different stages (closed account, disabled account, deleted settings, deleted account)."
+    },
+    {
+        "Term": "double quarter winner\n",
+        "Description": "predicting the winner of the two reference quarters. if neither team wins both quarters, or if one or both quarters end in a draw, then the winning option is considered as 'any other score' (aos)."
+    },
+    {
+        "Term": "dnb (draw no bet)",
+        "Description": "betting on a specific team to win but get your stake back if the match ends in a draw."
+    },
+    {
+        "Term": "dnd (draw/no draw)",
+        "Description": "betting on whether the game will be a draw or not."
+    },
+    {
+        "Term": "dual forecast\n",
+        "Description": "betting on the two teams that will finish in the top 2 positions of the tournament, regardless of their order."
+    },
+    {
+        "Term": "effective betting value",
+        "Description": "the absolute value of a customer's win/loss on each bet ticket (0 for draw and voided tickets)."
+    },
+    {
+        "Term": "entered match",
+        "Description": "the event is settled, and results are recorded in the system."
+    },
+    {
+        "Term": "ending game",
+        "Description": "betting on the last digit of the final score for both the home team and away team in each respective quarter and half (including overtime in 2nd half). the winning team score goes first, followed by the losing team to get the last digit combination result."
+    },
+    {
+        "Term": "exact away team goals",
+        "Description": "betting on the exact number of goals that away team will score during the regular time of a match."
+    },
+    {
+        "Term": "exact home team goals",
+        "Description": "betting on the exact number of goals that home team will score during the regular time of a match."
+    },
+    {
+        "Term": "exact total goals",
+        "Description": "betting on the exact number of goals that both teams will score during the regular time of a match."
+    },
+    {
+        "Term": "exact first half goals",
+        "Description": "betting on the exact number of goals that both teams will score in 1st half of a match."
+    },
+    {
+        "Term": "exact group points",
+        "Description": "betting on a team to reach a certain total points by the end of the group round."
+    },
+    {
+        "Term": "exact second half goals",
+        "Description": "betting on the exact number of goals that both teams will score in 2nd half of a match."
+    },
+    {
+        "Term": "extra time next goal ",
+        "Description": "betting on which team will score the next goal in an extra-time match."
+    },
+    {
+        "Term": "extra time yes/no",
+        "Description": "betting on whether a match will go to extra-time."
+    },
+    {
+        "Term": "extra time/goal",
+        "Description": "betting on whether the match will go to extra time and whether a goal will be scored during extra time."
+    },
+    {
+        "Term": "fantasy match\n",
+        "Description": "fantasy matches are pairings of teams from different matches."
+    },
+    {
+        "Term": "fantasy match: team to score first\n",
+        "Description": "betting on which team will score the first goal in a fantasy match."
+    },
+    {
+        "Term": "favourite",
+        "Description": "a competitor who is considered the most likely to win and therefore has the shortest or lowest odds. also referred to as the \"jolly\" or \"sponk\"."
+    },
+    {
+        "Term": "first booking",
+        "Description": "betting on which team will receive the first booking (yellow or red) in a match."
+    },
+    {
+        "Term": "first corner",
+        "Description": "betting on which team will take the first corner in a match."
+    },
+    {
+        "Term": "first goal/ last goal",
+        "Description": "betting on which team (home/away) will score the first/last goal in the half/full-time period."
+    },
+    {
+        "Term": "first goal kick",
+        "Description": "betting on which team will take the first goal kick in a match."
+    },
+    {
+        "Term": "first goal method\n",
+        "Description": "betting on the way the first goal of a match is scored by either team."
+    },
+    {
+        "Term": "first goal minute",
+        "Description": "betting on the exact time of the first goal in a match, regardless of the team."
+    },
+    {
+        "Term": "first goalscorer\n",
+        "Description": "betting on which player will score the first goal in a match."
+    },
+    {
+        "Term": "first goal time (10 minutes)",
+        "Description": "betting on which 10-minute time bracket the first goal will be scored."
+    },
+    {
+        "Term": "first goal time (15 minutes)",
+        "Description": "betting on which 15-minute time bracket the first goal will be scored."
+    },
+    {
+        "Term": "first half 1x2",
+        "Description": "betting on the first half of an event involves predicting one of three possible winning outcomes:\n- 1: the team named first (usually the home team).\n- x: a draw.\n- 2: the team named second (typically the away team)."
+    },
+    {
+        "Term": "first half alternative corners",
+        "Description": "betting on the given selection of corner bet options and the settlement is based on the total corner count taken by both teams after regular time of play."
+    },
+    {
+        "Term": "first half away team exact corners",
+        "Description": "betting on the exact number of corners taken by away team during the first half of the match."
+    },
+    {
+        "Term": "first half both teams to score/ results",
+        "Description": "betting on the result of the first half of the match and whether both teams will score in the first half."
+    },
+    {
+        "Term": "first half correct corners",
+        "Description": "betting on the correct corners at the end of the first half."
+    },
+    {
+        "Term": "first half corners race",
+        "Description": "betting on which team will reach the quoted number of corners first in the first half of the match."
+    },
+    {
+        "Term": "first half correct score",
+        "Description": "betting on the final score at the end of 1st half."
+    },
+    {
+        "Term": "first half draw no bet",
+        "Description": "betting on whether home or away team will win in the first half of a match. if the result is a draw at the end of the first half of regular time, all bets will be refunded."
+    },
+    {
+        "Term": "first half exact home team goals",
+        "Description": "betting on the exact number of goals scored by home team in the first half of a match."
+    },
+    {
+        "Term": "first half first corner",
+        "Description": "betting on which team will take the first corner in the first half of a match."
+    },
+    {
+        "Term": "first half handicap",
+        "Description": "betting on which team will have a higher score after adding the given handicap to the result of the first half of an event."
+    },
+    {
+        "Term": "first half home team exact corners",
+        "Description": "betting on the exact number of corners taken by home team during the first half of the match."
+    },
+    {
+        "Term": "first half home team player sent off",
+        "Description": "betting on which home team's player will be sent off in the first half of a match."
+    },
+    {
+        "Term": "first half away team player sent off",
+        "Description": "betting on which away team's player will be sent off in the first half of a match."
+    },
+    {
+        "Term": "first half over/under",
+        "Description": "betting on the total points in the first half of an event. if the total is more than the over/under pre-designated line then the winning result is over; if the total is less than the over/under pre-designated line then the winning result is under."
+    },
+    {
+        "Term": "first half odd/even",
+        "Description": "betting on whether the total points at the end of the first half of an event are odd or even."
+    },
+    {
+        "Term": "first half total corners aggregated",
+        "Description": "betting on the total number of corners taken by both teams during the first half of the match."
+    },
+    {
+        "Term": "first half last corner",
+        "Description": "betting on which team will take the last corner in the first half of a match."
+    },
+    {
+        "Term": "first half next goal",
+        "Description": "betting on which team will score the next goal in the first half of the match."
+    },
+    {
+        "Term": "first half player sent off",
+        "Description": "betting on which player will be sent off in the first half of a match."
+    },
+    {
+        "Term": "first ten minutes 1x2",
+        "Description": "betting on the three possible outcomes of the first 10 minutes in the regular time of a match."
+    },
+    {
+        "Term": "first half total booking vs second half total booking",
+        "Description": "betting on the total number of bookings received in the first and second half of an event. "
+    },
+    {
+        "Term": "first half total corner vs second half total corner",
+        "Description": "betting on the total number of corners in the first and second half of an event."
+    },
+    {
+        "Term": "first half total goal vs second half total goal",
+        "Description": "betting on the total number of goals in the first and second half of an event."
+    },
+    {
+        "Term": "first team to score",
+        "Description": "betting on which team will score first goal within the regular time of a match."
+    },
+    {
+        "Term": "first team to score 2 goals",
+        "Description": "betting on which team will be the first to score two (2) goals within the regular time of a match."
+    },
+    {
+        "Term": "first team to score 3 goals",
+        "Description": "betting on which team will be the first to score three (3) goals within the regular time of a match."
+    },
+    {
+        "Term": "first throw-in",
+        "Description": "betting on which team will take the first throw-in in a match."
+    },
+    {
+        "Term": "first offside",
+        "Description": "betting on which team will be caught offside first in a match."
+    },
+    {
+        "Term": "first substitution",
+        "Description": "betting on which team will make the first substitution during a match."
+    },
+    {
+        "Term": "first half / second half result",
+        "Description": "betting on the results of both the first and second half of the game. in this market, the following terms shall apply:\n\n- h: the team named first (usually the home team)\n- x: a draw\n- a: the team named second (usually the away team)\n\novertime score is included."
+    },
+    {
+        "Term": "fold",
+        "Description": "when preceded by a number, a fold indicates the number of selections in a combination (e.g., 5-fold = 5 selections)."
+    },
+    {
+        "Term": "forecast",
+        "Description": "predicting win/loss amount on bet tickets based on the current score. a positive red number indicates the amount that agent may lose, while a negative black number indicates the amount that agent may win."
+    },
+    {
+        "Term": "fractional odds",
+        "Description": "odds typically used by british bookmakers, such as 2/3. to calculate the net profit, multiply the odds by the stake."
+    },
+    {
+        "Term": "free kick",
+        "Description": "free kick refers to direct free kick and indirect free kick (except penalty kick and goal kick). free kick awarded but not taken does not count."
+    },
+    {
+        "Term": "free-kick selection",
+        "Description": "a free kick is determined based on the event time reported by the company\u2019s data provider, rather than the precise moment the free kick was taken."
+    },
+    {
+        "Term": "first free kick",
+        "Description": "betting on which team will take the first free kick in a match."
+    },
+    {
+        "Term": "first penalty to score or not to score\n",
+        "Description": "betting on whether the first team's penalty will be scored or missed."
+    },
+    {
+        "Term": "given credit        ",
+        "Description": "the amount of money given by the upline when an account was created."
+    },
+    {
+        "Term": "goliath",
+        "Description": "a goliath consists of 247 bets involving:\n- 28 double bets\n- 56 treble bets\n- 70 fourfold accumulator bets\n- 56 fivefold accumulator bets\n- 28 sixfold accumulator bets\n- 8 sevenfold accumulator bets\n- 1 eightfold accumulator bet\nat least two selections must win to gain a return."
+    },
+    {
+        "Term": "goal kick",
+        "Description": "a goal kick is awarded to the defending team if the ball completely crosses over the goal line, but not into the goal, and the attacking team is the last to touch the ball before it goes out."
+    },
+    {
+        "Term": "goal kick selection",
+        "Description": "a goal kick is determined based on the event time reported by the company\u2019s data provider, rather than the precise moment the goal kick is taken. when the goalkeeper kicks the ball from their hands or takes a free kick, it shall not be considered a goal kick."
+    },
+    {
+        "Term": "goal selection",
+        "Description": "a goal is determined based on the event time reported by the company\u2019s data provider, regardless of what is shown in the video replay. own goals shall be counted for the settlement of this market."
+    },
+    {
+        "Term": "goalscorer \u2013 anytime",
+        "Description": "betting on the player that will score a goal at any time during the match. extra-time will not be included."
+    },
+    {
+        "Term": "gross comm",
+        "Description": "gross comm refers to gross commission, representing the total commission earned by the agents before distribution to their downlines."
+    },
+    {
+        "Term": "group - top 2 finishes",
+        "Description": "betting on which two teams will finish in the top 2 within the group."
+    },
+    {
+        "Term": "group straight forecast",
+        "Description": "betting on which teams will place first and second in specific order within their respective group at the end of the group stage."
+    },
+    {
+        "Term": "gross win",
+        "Description": "licensee\u2019s revenue resulting from customer losses. when customers\u2019 win/loss is greater than zero, then the gross win is recorded as zero."
+    },
+    {
+        "Term": "half-time/full-time        ",
+        "Description": "betting on the game's results at both half-time and full-time. both selections must be correct for the bet to win."
+    },
+    {
+        "Term": "half time/full time exact total goals",
+        "Description": "betting on the exact number of goals scored by both teams in the first half and at the end of the match in regular time."
+    },
+    {
+        "Term": "half time/full time correct score\n",
+        "Description": "betting on the correct score both at half time and at the end of the match."
+    },
+    {
+        "Term": "half time result/total goals",
+        "Description": "betting on the result and total number of goals in the first half of a match."
+    },
+    {
+        "Term": "half time/full time total corners",
+        "Description": "betting on the total corners taken at half-time and at the end of the match."
+    },
+    {
+        "Term": "half with away team score the first goal",
+        "Description": "betting on which half of the match the away team will score the first goal.\nthe following options are available:\n- 1st half\n- 2nd half\n- no goal"
+    },
+    {
+        "Term": "half with home team score the first goal",
+        "Description": "betting on which half of the match the home team will score the first goal.\nthe following options are available:\n- 1st half\n- 2nd half\n- no goal"
+    },
+    {
+        "Term": "handicap",
+        "Description": "a bet where points are either deducted from the favored side or added to the underdog to even up the bet. also known as the spread."
+    },
+    {
+        "Term": "hedging",
+        "Description": "placing bets on the opposite side to reduce losses or secure a minimum amount of winnings."
+    },
+    {
+        "Term": "heinz",
+        "Description": "a heinz consists of 57 bets in different events including:\n15 double bets\n20 treble bets\n15 fourfold accumulator bets\n6 fivefold accumulator bets\n1 sixfold accumulator bet\nat least two selections must win to gain a return."
+    },
+    {
+        "Term": "home first half to score/second half to score\n",
+        "Description": "betting on whether home team will score in the first or second half of the match."
+    },
+    {
+        "Term": "home no bet",
+        "Description": "betting on whether the result is a draw or the away team will win. if the home team wins, the ticket will be refunded."
+    },
+    {
+        "Term": "home team",
+        "Description": "the team that is playing in their own town/stadium."
+    },
+    {
+        "Term": "home team exact corners",
+        "Description": "betting on the exact number of corners taken by the home team after regular time of play."
+    },
+    {
+        "Term": "home team highest scoring half",
+        "Description": "betting on which half of the match will the home team score the greater number of goals."
+    },
+    {
+        "Term": "home to win either half",
+        "Description": "betting on whether the home team can score more goals than their opponent in one of two halves."
+    },
+    {
+        "Term": "home to score in both halves",
+        "Description": "predict on whether the home team will score at least one goal in each half of the match in 90 minutes of play."
+    },
+    {
+        "Term": "home team player sent off",
+        "Description": "betting on which home team\u2019s player will be sent off in a regular time match."
+    },
+    {
+        "Term": "house",
+        "Description": "a casino or gambling center, as well as the operators of a gambling game."
+    },
+    {
+        "Term": "house winloss",
+        "Description": "the company total win/loss amount."
+    },
+    {
+        "Term": "house net winloss",
+        "Description": "the company net win/loss amount."
+    },
+    {
+        "Term": "highest scoring group",
+        "Description": "betting on the total number of goals scored by the group on the date specified."
+    },
+    {
+        "Term": "highest scoring half",
+        "Description": "betting on which half of the match will have the greater number of total goals.\nthe following options are available:\n- 1st half\n- 2nd half\n- tie"
+    },
+    {
+        "Term": "highest scoring team",
+        "Description": "the team with the highest score is the winner."
+    },
+    {
+        "Term": "highest scoring quarter",
+        "Description": "predict which quarter will have the highest point scored in the game. if two or more quarters have an equal highest score, \"tie\" will be the winner bet."
+    },
+    {
+        "Term": "indirect login account",
+        "Description": "\"indirect login account\" (ila) helps you efficiently manage multiple accounts, the function enables you to indirectly access multiple downline accounts from a single place."
+    },
+    {
+        "Term": "in play        ",
+        "Description": "the ability to place bets during a live match or event. "
+    },
+    {
+        "Term": "injury time",
+        "Description": "the extra playing time is added to compensate for time spent attending to injured players during the match. the injury time may be awarded during the end of the 1st half or the end of the 2nd half, and the duration may be as follows:\n- none\n- 1 minute\n- 2 minutes\n- 3 minutes\n- 4+ minutes\n"
+    },
+    {
+        "Term": "injury time awarded over/under",
+        "Description": "betting on whether the injury time awarded at the end of the first half will be over or under a specified value.\n"
+    },
+    {
+        "Term": "injury time awarded at end of 2nd half over/under",
+        "Description": "betting on whether the injury time awarded at the end of the second half will be over or under a specified value."
+    },
+    {
+        "Term": "ip matching",
+        "Description": "\"ip matching\" report is used to identify instances where different players are placing bets through shared ips."
+    },
+    {
+        "Term": "jackpot        ",
+        "Description": "a big win on a slot machine."
+    },
+    {
+        "Term": "kick off",
+        "Description": "the start or resumption of a football game, where a player kicks the ball from the center of the field."
+    },
+    {
+        "Term": "last bets",
+        "Description": "a function used by agents to reduce business risk by monitoring members' running bet tickets using various filters."
+    },
+    {
+        "Term": "last booking",
+        "Description": "betting on which team will receive the last booking (yellow or red) in a match."
+    },
+    {
+        "Term": "last corner",
+        "Description": "betting on which team will take the last corner in a match."
+    },
+    {
+        "Term": "last digit score",
+        "Description": "betting on the last digit of the total number of points scored in the respective quarter, halves (overtime score included in 2nd half), or final score of the game."
+    },
+    {
+        "Term": "last offside",
+        "Description": "betting on which team will be caught offside last in a match."
+    },
+    {
+        "Term": "last substitution",
+        "Description": "betting on which team will make the last substitution during a match."
+    },
+    {
+        "Term": "last team to score",
+        "Description": "betting on which team will score last goal within the regular time of a match."
+    },
+    {
+        "Term": "leagues top goalscorer",
+        "Description": "betting on which player will score most goals within one regular season of a league."
+    },
+    {
+        "Term": "league - team to be relegated",
+        "Description": "betting on which team will be relegated from the league."
+    },
+    {
+        "Term": "league - to finish bottom",
+        "Description": "betting on which team will finish at the bottom of a specific league over the course of the entire season."
+    },
+    {
+        "Term": "league - team in bottom two position",
+        "Description": "betting on which teams will finish in the bottom two positions this season."
+    },
+    {
+        "Term": "league - to be promoted",
+        "Description": "betting on which team will be promoted from the league."
+    },
+    {
+        "Term": "league - tricast",
+        "Description": "betting on the final league positions, predict the exact order of the first, second, and third teams."
+    },
+    {
+        "Term": "league - team to go unbeaten",
+        "Description": "betting on which team will complete the league without losing any game."
+    },
+    {
+        "Term": "live ball",
+        "Description": "all betting activities that take place while the event or match is taking place in real-time."
+    },
+    {
+        "Term": "live betting",
+        "Description": "placing bets during a match. a sportsbook offers changing odds on match-related events throughout the game."
+    },
+    {
+        "Term": "last free kick",
+        "Description": "betting on which team will take the last free kick in a match."
+    },
+    {
+        "Term": "last throw-in",
+        "Description": "betting on which team will take the last throw-in in a match."
+    },
+    {
+        "Term": "last goal kick\n",
+        "Description": "betting on which team will take the last goal kick in a match."
+    },
+    {
+        "Term": "lowest scoring team",
+        "Description": "the team with the lowest score is the winner."
+    },
+    {
+        "Term": "lucky 7",
+        "Description": "lucky's combinations consist of 1 system parlay and 3 single bets.\nlucky 7 = 1 trixie + 3 singles (in decimal odds type)."
+    },
+    {
+        "Term": "lucky 15",
+        "Description": "lucky's combinations consist of 1 system parlay and 4 single bets.\nlucky 15 = 1 yankee + 4 singles (in decimal odds type).\n"
+    },
+    {
+        "Term": "lucky 31",
+        "Description": "lucky's combinations consist of 1 system parlay and 5 single bets.\nlucky 31 = 1 canadian + 5 singles (in decimal odds type).\n"
+    },
+    {
+        "Term": "lucky 63",
+        "Description": "lucky's combinations consist of 1 system parlay and 6 single bets.\nlucky 63 = 1 heinz + 6 singles (in decimal odds type)."
+    },
+    {
+        "Term": "lucky 127",
+        "Description": "lucky's combinations consist of 1 system parlay and 7 single bets.\nlucky 127 = 1 super heinz + 7 singles (in decimal odds type)."
+    },
+    {
+        "Term": "lucky 255",
+        "Description": "lucky's combinations consist of 1 system parlay and 8 single bets.\nlucky 255 = 1 goliath + 8 singles (in decimal odds type)."
+    },
+    {
+        "Term": "match handicap & total\n",
+        "Description": "betting on the combination of handicap and over/under, where both these options must win individually for the bet combination to be counted as a win."
+    },
+    {
+        "Term": "match half-time/full-time odd/even",
+        "Description": "betting on whether the half-time and the full-time results of the match will respectively be odd and odd, odd and even, even and odd, or even and even."
+    },
+    {
+        "Term": "match decided method\n",
+        "Description": "betting on both the winner and the method of winning the match. the following options are available:\n- home/regular time\n- home/extra time\n- home/penalty shootouts\n- away/regular time\n- away/extra time\n- away/penalty shootouts"
+    },
+    {
+        "Term": "margin",
+        "Description": "the extent by which one competitor surpasses another in term of league standings/points."
+    },
+    {
+        "Term": "master agent list",
+        "Description": "\"master agent list\" displays a list of all downline masters, agents, and members together with their information and settings (general info, bet settings, commissions, etc.), providing a better overview of downlines' settings and simplifying configurations. furthermore, master agent list offers access to downlines' daily statement reports for better insights."
+    },
+    {
+        "Term": "master outstanding",
+        "Description": "\"master outstanding\" shows the members\u2019 turnover amount of all running tickets and super's shared amount based on position taking percentage."
+    },
+    {
+        "Term": "max bet",
+        "Description": "the maximum amount of money that a player can wager on one bet."
+    },
+    {
+        "Term": "max per ball",
+        "Description": "the maximum amount of money that a player can wager on one bet per ball."
+    },
+    {
+        "Term": "max per match",
+        "Description": "the maximum amount of money that a player can wager on one bet per match."
+    },
+    {
+        "Term": "member list",
+        "Description": "\"member list\" displays a list of all downline members together with their information and settings (general info, bet settings, commissions, etc.), providing a better overview of members' settings and simplifying configurations. furthermore, member list offers access to members' daily statement reports for better insights."
+    },
+    {
+        "Term": "member outstanding",
+        "Description": "\"member outstanding\" shows the members' turnover amount of all running tickets and agent\u2019s shared amount based on position taking percentage."
+    },
+    {
+        "Term": "member win/loss limit",
+        "Description": "\"member win loss limit\" is a report that provides an overview of all agent\u2019s members and their associated win loss limit."
+    },
+    {
+        "Term": "min bet",
+        "Description": "the minimum amount of money that a player can wager on one bet."
+    },
+    {
+        "Term": "mix parlay",
+        "Description": "a bet combining multiple selections (more than 2) from different matches or sports. odds for the mix parlay bet are calculated by multiplying individual odds for each selection. if any bet in the mix parlay is lost completely, the entire mix parlay is lost. however, there are special cases for handicap and over/under bets:\n\n- if won by half, actual odds = [(odds \u2013 1) / 2] + 1\n- if lost by half, actual odds = [0.5]"
+    },
+    {
+        "Term": "mobile betting",
+        "Description": "a feature offered by bookmakers that allows players to place bets via mobile devices."
+    },
+    {
+        "Term": "moneyline",
+        "Description": "bets that are won based on the actual outcome of the game without any special conditions."
+    },
+    {
+        "Term": "my thresholds",
+        "Description": "\"my thresholds\" provides a means for you to oversee your win/loss amounts by setting up thresholds, allowing for effective risk control and well-informed decision-making."
+    },
+    {
+        "Term": "my watchlist",
+        "Description": "\"my watchlist\" is an account monitoring list created to oversee players\u2019 or your win/loss amounts by setting up thresholds, allowing for effective risk control and well-informed decision-making."
+    },
+    {
+        "Term": "nba",
+        "Description": "abbreviation for national basketball association.\n"
+    },
+    {
+        "Term": "ncaa",
+        "Description": "abbreviation for national collegiate athletic association."
+    },
+    {
+        "Term": "next booking",
+        "Description": "betting to predict which team will receive the next booking, whether it be a red card and/or a yellow card."
+    },
+    {
+        "Term": "next corner",
+        "Description": "betting on which team will take the next corner in a match."
+    },
+    {
+        "Term": "next offside",
+        "Description": "betting on which team will be caught offside next."
+    },
+    {
+        "Term": "next free kick",
+        "Description": "betting on which team will be awarded the next free kick."
+    },
+    {
+        "Term": "next goal",
+        "Description": "betting on which team will score the next goal in a match."
+    },
+    {
+        "Term": "next goal kick",
+        "Description": "betting on which team will take the next goal kick in a match."
+    },
+    {
+        "Term": "next throw-in\n",
+        "Description": "betting on which team will take the next throw-in in a match."
+    },
+    {
+        "Term": "new master",
+        "Description": "\"new master\" assists super in creating new master account(s) using different methods tailored to your specific needs."
+    },
+    {
+        "Term": "new agent",
+        "Description": "\"new agent\" assists master in creating new agent account(s) using different methods tailored to your specific needs."
+    },
+    {
+        "Term": "new member",
+        "Description": "\"new member\" assists agent in creating new member account(s) using different methods tailored to your specific needs."
+    },
+    {
+        "Term": "new world cup winner",
+        "Description": "betting on whether a team other than the defending champion will emerge as the new winner of the fifa world cup, thereby becoming a new champion."
+    },
+    {
+        "Term": "net turnover",
+        "Description": "the amount of turnover after deducting draw tickets."
+    },
+    {
+        "Term": "nfc        ",
+        "Description": "abbreviation for national football conference."
+    },
+    {
+        "Term": "nfl",
+        "Description": "abbreviation for national football league."
+    },
+    {
+        "Term": "nhl",
+        "Description": "abbreviation for national hockey league."
+    },
+    {
+        "Term": "nit",
+        "Description": "abbreviation for national invitational tournament."
+    },
+    {
+        "Term": "non-entered match",
+        "Description": "the event has not been settled and the results have not been entered into the system."
+    },
+    {
+        "Term": "none selection",
+        "Description": "none means that none of the following events have taken place during a given period, namely goal, free-kick, corner, goal kick, throw in, penalty, and booking."
+    },
+    {
+        "Term": "normal time (soccer)",
+        "Description": "the regular playing time in a soccer game consists of two 45-minute halves. \n\nwhen betting on a match, the result is determined by the normal time, which includes the time added by the referee for injuries and stoppages.\n\nunless stated otherwise, it does not include extra time, golden goals, or penalty shootouts."
+    },
+    {
+        "Term": "nominate finalists",
+        "Description": "betting on which teams will compete during the finals of the tournament."
+    },
+    {
+        "Term": "odds",
+        "Description": "the ratio between the potential payout for a winning bet and the amount of the bet placed."
+    },
+    {
+        "Term": "odd/even",
+        "Description": "betting on whether the total goals/scores of a match will be odd or even."
+    },
+    {
+        "Term": "opening balance",
+        "Description": "on each balance-up date, the accumulated win/loss of an account since its creation date will be summed up as the opening balance. if the \"from\" date falls on a balance-up date, the win/loss of that date will be considered the accumulated win/loss."
+    },
+    {
+        "Term": "outright",
+        "Description": "betting on the winner of an event, race or tournament."
+    },
+    {
+        "Term": "outstanding",
+        "Description": "total betting amount on running tickets."
+    },
+    {
+        "Term": "over/under",
+        "Description": "betting on whether the total goals/scores of a match will be above or below a specified number."
+    },
+    {
+        "Term": "parlay",
+        "Description": "a multiple bet (or an accumulator) where two or more selections must win for a player to receive the payout."
+    },
+    {
+        "Term": "patent",
+        "Description": "a multiple bet involving in different events involving 7 bets:\n- 3 singles\n- 3 doubles\n- 1 treble"
+    },
+    {
+        "Term": "payout        ",
+        "Description": "the amount a player receives from the bookmaker as winnings or returns."
+    },
+    {
+        "Term": "penalty        ",
+        "Description": "betting on whether a game will be decided by a penalty shootout or not."
+    },
+    {
+        "Term": "penalty awarded",
+        "Description": "betting on whether a penalty will be awarded in a match."
+    },
+    {
+        "Term": "penalty selection",
+        "Description": "a penalty is determined based on the event time reported by the company\u2019s data provider, rather than the precise moment the penalty is taken. when the goalkeeper kicks the ball from their hands or takes a free kick, it shall not be considered a penalty."
+    },
+    {
+        "Term": "penalty shootout",
+        "Description": "betting on which team of the match will take the first penalty during the penalty shootout."
+    },
+    {
+        "Term": "penalty shootout combo (first 10)",
+        "Description": "betting on the outcome of a penalty shootout by predicting the sequence of goals or misses from both teams in a specific match."
+    },
+    {
+        "Term": "penalty shootout - correct score",
+        "Description": "betting on the final score at the end of the penalty shootout.\nin the penalty shootout correct score market, to win the \u201chaos\u201d or \u201caaos\u201d bet options, the selected team must win by a score not listed in the selection.\n- if the outcome is not decided within the ten (10) penalties, the final result shall include goals scored during a sudden-death shootout.\n- if the match does not go to penalty shootout, all bets will be returned.\n- in case a match is abandoned, bets will be voided unless the settlement has been finalized.\n"
+    },
+    {
+        "Term": "penalty shootout \u2013 exact total goals",
+        "Description": "betting on the exact total number of goals scored by both teams during penalty shootouts."
+    },
+    {
+        "Term": "penalty shootout \u2013 goal / miss\n",
+        "Description": "betting on whether the specified team will score or miss the goal in the penalty shootout."
+    },
+    {
+        "Term": "penalty shootout \u2013 odd/even",
+        "Description": "betting on whether total number of goals scored by both teams during penalty shootout will be odd or even."
+    },
+    {
+        "Term": "penalty shoot-outs products",
+        "Description": "betting on which team will win the penalty shootout."
+    },
+    {
+        "Term": "penalty shootout \u2013 single team over/under",
+        "Description": "betting on whether total number of goals scored by a specified team during penalty shootout will be over or under the pre-designated line."
+    },
+    {
+        "Term": "penalty shootout to go to sudden death",
+        "Description": "betting to predict if the penalty shootout will go to sudden death. a 'yes' bet means it will proceed, while a 'no' bet means it won't."
+    },
+    {
+        "Term": "penalty shootout woodwork - rounds 1 to 5\n",
+        "Description": "betting on whether the penalty shots will hit the post or crossbar in each round. if the ball hits the post first and is subsequently saved by the goalkeeper, it is considered a \u201cwoodwork hit\u201d \nbet placement is open for rounds 1 to 5, and the settlement of bets is determined by each round\u2019s result.\n- if the penalty shootout does not reach the designated round, all bets will be voided.\n- if the match does not go to penalty shootout, all bets will be returned.\n- in case a match is abandoned, bets will be voided unless the settlement has been finalized."
+    },
+    {
+        "Term": "penalty shootout 1x2 \u2013 rounds 1 to 5",
+        "Description": "betting on any one of the three possible outcomes in the penalty shootout.\n'1' denotes the first team (usually the home team), 'x' signifies a draw or tie, and '2' represents the second team (usually the away team).\nbet placement is open for rounds 1 to 5, and the settlement of bets is determined by each round\u2019s result.\n- both teams must take their penalty shots, if any team does not, all bets will be voided in that particular round.\n- if the match does not go to penalty shootout, all bets will be returned.\n- in case a match is abandoned, bets will be voided unless the settlement has been finalized.\n"
+    },
+    {
+        "Term": "penalty shootout both/one/neither \u2013 rounds 1 to 5",
+        "Description": "betting on whether both, one, or neither of the teams will or will not score in the penalty shootout.\nthe following betting options are available:\n- both = both teams will score.\n- one = either team will score.\n- neither = both teams will not score.\nbet placement is open for rounds 1 to 5, and the settlement of bets is determined by each round\u2019s result.\n- if the penalty shootout does not reach the designated round, all bets will be voided.\n- if the match does not go to penalty shootout, all bets will be returned.\n- in case a match is abandoned, bets will be voided unless the settlement has been finalized."
+    },
+    {
+        "Term": "pending funds",
+        "Description": "the total amount of money bet on running tickets."
+    },
+    {
+        "Term": "place a bet",
+        "Description": "the player\u2019s acceptance of the bet offered by the bookmaker."
+    },
+    {
+        "Term": "platform        ",
+        "Description": "the computing systems used by members to place bets, such as web, wap, smartphone, and others."
+    },
+    {
+        "Term": "player",
+        "Description": "a person who places bets, also referred to as a bettor or gambler."
+    },
+    {
+        "Term": "player sent off",
+        "Description": "betting on which player will be sent off in a regular time match."
+    },
+    {
+        "Term": "pool",
+        "Description": "the total of all money wagered on a specific bet type."
+    },
+    {
+        "Term": "position taking",
+        "Description": "position taking (pt) is the percentage-based sharing of win-loss amounts between super, master, and agent levels on transactions conducted between agents and members."
+    },
+    {
+        "Term": "position taking template",
+        "Description": "the \"position taking template\" in lite mode lets you set default sharing percentages when creating new downlines. "
+    },
+    {
+        "Term": "postponed",
+        "Description": "when an event is canceled and rescheduled for a later date."
+    },
+    {
+        "Term": "pre-game",
+        "Description": "the period before a game starts when players can place bets, with no further bets allowed once the game begins. (number wheel)"
+    },
+    {
+        "Term": "problem account list",
+        "Description": "\"problem account list\" displays the list of downlines that are marked as \u201cproblem accounts\u201d due to their abnormal actions or behaviors."
+    },
+    {
+        "Term": "progressive games contribution",
+        "Description": "\"progressive games contribution\" report helps you track the contribution amount and share of progressive games."
+    },
+    {
+        "Term": "qualified active players",
+        "Description": "players who have placed at least 1 bet and met the required turnover within the month."
+    },
+    {
+        "Term": "quarter correct score\n",
+        "Description": "betting on the number of winning quarters for both the home and away teams in the game.\n\nexample:\nplace bet home 3 - away 1 (3-1),\nquarter results:\n1st quarter - 20-15\n2nd quarter - 10-18\n3rd quarter - 25-20\n4th quarter - 29-28\n\nresult: home 3 - away 1 (3-1)\nbet placed on (3-1) is the winning bet."
+    },
+    {
+        "Term": "quarter to win to nil",
+        "Description": "betting on whether a team will win the game without conceding a single quarter."
+    },
+    {
+        "Term": "quarter to win from behind",
+        "Description": "betting on the team that will either \"lose in quarter 1 and draw in quarter 2\" or \"draw in quarter 1 and lose in quarter 2\", but ultimately lead in the remaining quarters to secure the win by the end of 4 quarters."
+    },
+    {
+        "Term": "quarter x double chance",
+        "Description": "betting on two possible outcomes for the match result at the end of each quarter."
+    },
+    {
+        "Term": "quarter 1/quarter 2 result\n",
+        "Description": "betting on the quarter 1 and quarter 2 results in the game, where \"h\" represents the first named team (usually the home team), \"x\" denotes a draw, and \"a\" indicates the second named team (usually the away team)."
+    },
+    {
+        "Term": "quarter 3/quarter 4 result\n",
+        "Description": "betting on the quarter 3 and quarter 4 results in the game, where \"h\" represents the first named team (usually the home team), \"x\" denotes a draw, and \"a\" indicates the second named team (usually the away team)."
+    },
+    {
+        "Term": "quarters winners handicap\n",
+        "Description": "betting on the difference in the number of quarters each team wins, factoring in the handicap. a single quarter can have three possible results: win, draw, and lose. the final result is derived from team a's quarter wins minus team b's quarter wins."
+    },
+    {
+        "Term": "quarter draw over/under\n",
+        "Description": "betting on whether the number of quarters ending in a draw in the match will be over or under the pre-designated line of 0.5, 1.5, or 2.5+."
+    },
+    {
+        "Term": "rejected",
+        "Description": "the bet was rejected by the operator at the time of bet placement."
+    },
+    {
+        "Term": "refund",
+        "Description": "when a match or matches are canceled, postponed, interrupted, or delayed, accepted bets will be placed under \"refund\" status, resulting in the return of the stakes."
+    },
+    {
+        "Term": "refund ft",
+        "Description": "matches/games whose full-time bets are refunded"
+    },
+    {
+        "Term": "refund ht",
+        "Description": "matches/games whose half-time bets are refunded."
+    },
+    {
+        "Term": "regional winner\n",
+        "Description": "betting on the winner of the event or tournament from the region."
+    },
+    {
+        "Term": "result",
+        "Description": "\"results\" report helps you track the latest results of all matches/games (excluding rng casino) within a selected period, sorted by sport/game types and leagues/markets."
+    },
+    {
+        "Term": "result/first team to score\n",
+        "Description": "betting on which team will score the first goal and predicts any one of three possible winning outcomes for an event."
+    },
+    {
+        "Term": "result/total goal",
+        "Description": "betting on:\n- (a) the outcome of a match (home win, away win, or draw)\n- (b) whether the total number of goals in the final result of an event will be over or under the pre-designated line."
+    },
+    {
+        "Term": "rock bottom\n",
+        "Description": "betting on which team will finish at the bottom of the group standings."
+    },
+    {
+        "Term": "runner",
+        "Description": "in racing, a runner is a bookie's employee who gathers information on betting progress elsewhere on the course and serves as a messenger, \"running\" to and from pari-mutuel windows for the occupants of clubhouse boxes."
+    },
+    {
+        "Term": "score box",
+        "Description": "betting on the score/goal margin/total goal bet type, with a minimum of three (3) and a maximum of five (5) outcomes depending on the real-time situation."
+    },
+    {
+        "Term": "search tickets",
+        "Description": "the \"search tickets\" function allows you to find detailed information about a ticket by inputting their reference number."
+    },
+    {
+        "Term": "second half 1x2",
+        "Description": "betting on the result in the second half of an event with three possible outcomes (home/draw/away)."
+    },
+    {
+        "Term": "second half correct corners",
+        "Description": "betting on the correct corners at the end of the second half."
+    },
+    {
+        "Term": "second half correct score",
+        "Description": "betting on the score in the second half of an event."
+    },
+    {
+        "Term": "second half draw no bet",
+        "Description": "betting on whether home or away will win, considering only the second half of a match. if the second half of regular time results in a draw, all bets will be refunded."
+    },
+    {
+        "Term": "second half first booking",
+        "Description": "betting on which team will receive the first booking (yellow or red) in the second half of a match."
+    },
+    {
+        "Term": "second half first corner",
+        "Description": "betting on which team will take the first corner in the second half of a match."
+    },
+    {
+        "Term": "second half first free kick",
+        "Description": "betting on which team will take the first free kick in a match."
+    },
+    {
+        "Term": "second half first offside",
+        "Description": "betting on which team will be caught offside first in the second half of a match."
+    },
+    {
+        "Term": "second half first goal kick",
+        "Description": "betting on which team will take the first goal kick in the second half of a match."
+    },
+    {
+        "Term": "second half first throw-in",
+        "Description": "betting on which team will take the first throw-in in the second half of a match."
+    },
+    {
+        "Term": "second half handicap",
+        "Description": "betting on the team with the better score after adding the given handicap to the result of the second half of an event."
+    },
+    {
+        "Term": "second half over/under",
+        "Description": "betting on the outcome based on the total points scored in the second half of an event, with the result being determined as \"over\" if the total exceeds the pre-designated line, and \"under\" if the total falls below the line."
+    },
+    {
+        "Term": "second half odd/even",
+        "Description": "betting on whether the total number of points at the end of the second half of an event is odd or even."
+    },
+    {
+        "Term": "single bet",
+        "Description": "the simplest form of betting where you place one bet on one event."
+    },
+    {
+        "Term": "single team odd/even",
+        "Description": "betting on whether the full-time score of a specific team in a match will be odd or even."
+    },
+    {
+        "Term": "single team total bookings over/under",
+        "Description": "betting on the total number of bookings received by a specified team in a match will exceed (over) or fall below (under) the pre-designated line."
+    },
+    {
+        "Term": "specific 10-minute handicap (hdp)",
+        "Description": "betting on competitors or teams with a handicap advantage, where the winner is the team with the higher score obtained after adding the given handicap to the result at the end of each 10-minute interval in a match."
+    },
+    {
+        "Term": "specific 10 minutes over/under (o/u)",
+        "Description": "betting on the total points (goals, corners, games, cards, etc.) at the end of each 10-minute interval in a match, with the winning result being \"over\" if the total exceeds the pre-designated over/under line, and \"under\" if the total falls below the line."
+    },
+    {
+        "Term": "specific 15 minutes 1x2",
+        "Description": "betting on one of three possible outcomes at the end of each 15-minute interval in a match.\n\n1: refers to the team named first (usually the home team).\nx: denotes a draw or tie.\n2: refers to the team named second (usually the away team)."
+    },
+    {
+        "Term": "specific 15-minute handicap (hdp)",
+        "Description": "betting on competitors or teams with a handicap advantage, where the winner is the team with the higher score obtained after adding the given handicap to the result at the end of each 15-minute interval in a match."
+    },
+    {
+        "Term": "specific 15-minute over/under (ou)\n",
+        "Description": "betting on the total points (goals, corners, games, cards, etc.) at the end of each 15-minute interval in a match, with the winning result being \"over\" if the total exceeds the pre-designated over/under line, and \"under\" if the total falls below the line."
+    },
+    {
+        "Term": "spread",
+        "Description": "also known as a point spread, it refers to the points given to the underdog to level the odds with the favorite."
+    },
+    {
+        "Term": "stake",
+        "Description": "the amount of money you are betting."
+    },
+    {
+        "Term": "statement",
+        "Description": "\"statement\" reports assist you in tracking your business profits by summarizing and displaying all the information about your day-to-day balance (including transfer amount) in a selected period."
+    },
+    {
+        "Term": "straight forecast",
+        "Description": "betting on which two teams (2) will finish in the top 2 positions, in exact order, at the end of the tournament."
+    },
+    {
+        "Term": "every single minute (super live)",
+        "Description": "betting on predicting a specific event that will occur in the designated minute such as a corner kick, throw-in, goal kick, free kick, goal, offside, or any other listed event. set pieces that are awarded but untaken will not be counted."
+    },
+    {
+        "Term": "first goal (super live)",
+        "Description": "betting on the precise timing of the first goal in a match."
+    },
+    {
+        "Term": "time of possession (super live)",
+        "Description": "betting on whether the designated teams' possession percentage will be over or under the specified percentage."
+    },
+    {
+        "Term": "next set piece (super live)",
+        "Description": "betting on predicting which of the four events \u2013 (1) corner kick, (2) throw-in, (3) goal kick, and (4) free kick - will happen next after a specified match time. set pieces that are awarded but untaken will not be counted."
+    },
+    {
+        "Term": "goal within 60 seconds (super live)",
+        "Description": "betting on whether a goal will be scored within 60 seconds following a (1) penalty kick, (2) corner kick or (3) free kick \u2013 each will be referred to as \"dangerous kick\".\nbets will be accepted after the whistle is blown for a dangerous kick and will close a few seconds before the dangerous kick is actually performed.\nthe 60 second countdown will start from the moment the dangerous kick is actually performed."
+    },
+    {
+        "Term": "super heinz",
+        "Description": "a super heinz consists of 120 bets including:\n- 21 double bets\n- 35 treble bets\n- 35 fourfold accumulator bets\n- 21 fivefold accumulator bets\n- 7 sixfold accumulator bets\n- 1 sevenfold accumulator bet\nat least two selections must win to gain a return."
+    },
+    {
+        "Term": "super yankee",
+        "Description": "a bet with 4 types of combinations including 26 smaller bets: \n- 10 doubles\n- 10 trebles\n- 5 fourfolds\n- 1 fivefold accumulator\nat least two selections must win to gain a return."
+    },
+    {
+        "Term": "system parlay",
+        "Description": "when placing mix parlay bets, members can choose to play system parlay. when selecting this option, the total stake is multiplied based on the number of bets. the odds for a system parlay bet are determined by multiplying the individual odds for each winning selection:\n\u2022        if any of selection is draw, its odds value will be set as 1.\n\u2022        if any of selection is lost, its odds value will be set as 0."
+    },
+    {
+        "Term": "time of first goal\n",
+        "Description": "betting on which time bracket the first goal will be scored."
+    },
+    {
+        "Term": "team group points",
+        "Description": "betting on whether the team\u2019s points at the end of the group round will be \u201cunder\u201d, \u201cinclusive\u201d, or \u201cover\u201d the pre-designated line."
+    },
+    {
+        "Term": "team to win from behind\n",
+        "Description": "betting on a team that is initially losing in the match but manages to come back and win at the end of the 90-minute timeframe."
+    },
+    {
+        "Term": "three-way handicap",
+        "Description": "betting on 3-way handicap which includes the possibility of a draw, with three potential outcomes: one team winning after the handicap, the other team winning after the handicap, or a tied result after considering the handicap adjustments."
+    },
+    {
+        "Term": "throw-in",
+        "Description": "a throw-in is awarded to a team if the ball fully crosses the sideline due to contact with an opposing player. an awarded throw-in but untaken does not count."
+    },
+    {
+        "Term": "tie",
+        "Description": "also known as a push or draw, this is a neutral outcome where no money is won or lost because the teams/competitors' scores and final rankings are equal, resulting in a balanced outcome."
+    },
+    {
+        "Term": "tips",
+        "Description": "the selections and predictions made by an expert or observer regarding a competitor's performance in an event."
+    },
+    {
+        "Term": "tournament or event top goalscorer\n",
+        "Description": "betting on which player will score the most goals within one tournament or an event."
+    },
+    {
+        "Term": "to reach final\n",
+        "Description": "betting on which team will reach the finals of the tournament."
+    },
+    {
+        "Term": "to reach quarter final\n",
+        "Description": "betting on which team will reach quarter finals of the tournament."
+    },
+    {
+        "Term": "to reach semi final\n",
+        "Description": "betting on which team will reach semi finals of the tournament."
+    },
+    {
+        "Term": "to win either half\n",
+        "Description": "betting on whether your chosen team can score more goals than their opponent in one of the two halves."
+    },
+    {
+        "Term": "to win from behind",
+        "Description": "betting on whether a team will overturn a losing position and come back winning in a match (or a specified period)."
+    },
+    {
+        "Term": "to win on penalties",
+        "Description": "betting on whether a team will win the tie after a penalty shootout. bets are valid only for matches that go into penalties, and if the match concludes before penalties, the selection will result in a loss. if a fixture is postponed or abandoned, standard rules for postponed/abandoned matches will be applied."
+    },
+    {
+        "Term": "to win to nil",
+        "Description": "betting on which team will both win the game and prevent their opponent from scoring (keeping a clean sheet)."
+    },
+    {
+        "Term": "to win title",
+        "Description": "betting on which team will win the title at the end of the tournament."
+    },
+    {
+        "Term": "to win in extra-time",
+        "Description": "betting on whether a team will win the tie in extra time. to win this bet, your chosen team must secure the win in the extra-time period (2 x 15 minutes plus injury time unless stated otherwise). if the match does not go to extra time, this selection will result in a loss. if a fixture is postponed or abandoned, standard rules for postponed/abandoned matches will be applied."
+    },
+    {
+        "Term": "total corner & total goal\n",
+        "Description": "betting on the total number of corners and total goals taken by the home teams versus the total number of corners and total goals taken by the away teams in specific matches."
+    },
+    {
+        "Term": "total corners aggregated",
+        "Description": "betting on the total number of corners taken by both teams after regular time of play."
+    },
+    {
+        "Term": "total goal",
+        "Description": "betting on the number of goals/scores that will occur either in the half-time or full-time of the match."
+    },
+    {
+        "Term": "total goals minutes\n",
+        "Description": "betting on predicting the sum of minutes of all goals scored in the match, e.g. goals scored in the 20th and 40th minutes add up to 60 minutes."
+    },
+    {
+        "Term": "total to",
+        "Description": "total turnover is the total amount of money wagered on a specific day, and is calculated by summing the stakes of all valid bet tickets that have been settled for that day across the entire company."
+    },
+    {
+        "Term": "total penalties taken in shootout",
+        "Description": "betting on the number of penalties taken in the penalty shootout, regardless of whether any goal was scored or not."
+    },
+    {
+        "Term": "top african team\n",
+        "Description": "betting on which african team will advance farthest in the fifa world cup tournament."
+    },
+    {
+        "Term": "top european team\n",
+        "Description": "betting on which european team will advance farthest in the fifa world cup tournament."
+    },
+    {
+        "Term": "top jersey sponsor\n",
+        "Description": "betting on which jersey sponsor will have their sponsored team win the title."
+    },
+    {
+        "Term": "top south american team\n",
+        "Description": "betting on which south american team will advance farthest in the fifa world cup tournament."
+    },
+    {
+        "Term": "top newcomer\n",
+        "Description": "betting on which team will finish as the top newcomer of an event or tournament."
+    },
+    {
+        "Term": "throw in selection",
+        "Description": "a throw in is determined based on the event time reported by the company\u2019s data provider, rather than the precise moment the throw in is taken."
+    },
+    {
+        "Term": "traa",
+        "Description": "transferred with member"
+    },
+    {
+        "Term": "trac",
+        "Description": "transferred with master"
+    },
+    {
+        "Term": "transfer all & clear credit",
+        "Description": "\u201ctransfer all & clear credit\u201d allows you to transfer all yesterday's balance and clear (take back) given credit from your inactive direct downline including all the associated indirect downlines."
+    },
+    {
+        "Term": "trans. time",
+        "Description": "a unique reference number is assigned to each bet in the system, along with the date and time when the bet was accepted."
+    },
+    {
+        "Term": "treble",
+        "Description": "a bet on three selections where all three must win to gain a return."
+    },
+    {
+        "Term": "trixie",
+        "Description": "a trixie consists of 4 bets involving:\n- 3 double bets \n- 1 treble bet. \nat least two selections must win to gain a return."
+    },
+    {
+        "Term": "turnover",
+        "Description": "the total amount of money wagered on a specific day, is calculated by summing the stakes of all valid bet tickets that have been settled for that day across the entire company."
+    },
+    {
+        "Term": "team stage of elimination\n",
+        "Description": "betting on which stage the stated team will be eliminated from the competition."
+    },
+    {
+        "Term": "tra",
+        "Description": "transfer amount."
+    },
+    {
+        "Term": "tratp",
+        "Description": "transfer amount for 3rd party."
+    },
+    {
+        "Term": "underdog",
+        "Description": "the team, side or contestant in any given event is considered to be the least likely to win."
+    },
+    {
+        "Term": "var",
+        "Description": "video assistant referee"
+    },
+    {
+        "Term": "valid bet tickets",
+        "Description": "bet tickets with a status of won, lose, or draw"
+    },
+    {
+        "Term": "win score box",
+        "Description": "betting on predicting the winner of the match with a series of different winning goal margins and odds offered on each outcome between the home or away team."
+    },
+    {
+        "Term": "void",
+        "Description": "the bet is accepted but ultimately voided by the system administrator."
+    },
+    {
+        "Term": "vs",
+        "Description": "playing against each other, e.g. red sox vs yankees."
+    },
+    {
+        "Term": "wager",
+        "Description": "to risk money on the outcome of an event."
+    },
+    {
+        "Term": "wager type",
+        "Description": "bet type"
+    },
+    {
+        "Term": "wba",
+        "Description": "abbreviation for world boxing championship, one of the top four coveted championships in boxing."
+    },
+    {
+        "Term": "win/loss",
+        "Description": "the win/loss amount of a ticket (including the actual stake)."
+    },
+    {
+        "Term": "win loss report",
+        "Description": "\u201cwin loss\u201d report shows the total number of today\u2019s and yesterday\u2019s events, categorized by sport type. it also displays the downline's win/loss amount in a specified period, enabling you to manage and minimize the risks in business."
+    },
+    {
+        "Term": "win loss detail report",
+        "Description": "\u201cwin loss detail\u201d report provides more in-depth details about the win/loss amount of your downlines in a selected period. you can rely on the data to manage and minimize risks in business."
+    },
+    {
+        "Term": "win only",
+        "Description": "betting on a specific competitor or team to win in an event, also called a straight bet or money line betting."
+    },
+    {
+        "Term": "win to",
+        "Description": "turnover amount for win bet type\n"
+    },
+    {
+        "Term": "winner and top scorer double",
+        "Description": "betting on which team will win the competition and which players will score the most goals."
+    },
+    {
+        "Term": "winning margin & 1h winning margin\n",
+        "Description": "winning margin means betting to predict the winner of the match and the difference in goals scored between the home and away teams.\n1h winning margin means betting to predict the winner of the match and the difference in goals scored between the home and away teams in the first half.\nthe options available for this bet type are those indicated on the website. for example:\n- home wins by 1 goal\n- home wins by 2 goals\n- home wins by 3 or more goals\n- any score draw (exclude 0-0)\n- away win by 1 goal\n- away win by 2 goals\n- away win by 3 or more goals\n- no goal"
+    },
+    {
+        "Term": "winning group",
+        "Description": "betting on which team group will feature the winning team of the tournament."
+    },
+    {
+        "Term": "wining continent\n",
+        "Description": "betting on predicting the continent of the winner of the tournament."
+    },
+    {
+        "Term": "which team from group to qualify",
+        "Description": "betting on which team will qualify and progress to the next round of stated competition."
+    },
+    {
+        "Term": "which half will produce the first goal",
+        "Description": "betting on which half of the match will the first goal be scored.\nthe following betting options are available:\n- first half\n- second half\n- no goal"
+    },
+    {
+        "Term": "which team will advance to next round",
+        "Description": "betting on which team will advance to the next round of the tournament."
+    },
+    {
+        "Term": "which team/player will advance farthest in the tournament",
+        "Description": "betting on which selected team/player will advance farthest in the tournament."
+    },
+    {
+        "Term": "which team will win all their group stage games",
+        "Description": "betting on which team will win all of its matches in the group stage."
+    },
+    {
+        "Term": "which team will win all their matches in the competition (regular time only)",
+        "Description": "betting on which team will win all of its matches in the tournament during the regular time."
+    },
+    {
+        "Term": "which team will lose all their group stage games",
+        "Description": "betting on which team will lose all of its matches in the group stage."
+    },
+    {
+        "Term": "wnba",
+        "Description": "abbreviation for women\u2019s national basketball association."
+    },
+    {
+        "Term": "\"x\"",
+        "Description": "represents a draw in soccer betting."
+    },
+    {
+        "Term": "yankee",
+        "Description": "a yankee consists of 11 bets involving:\n- 6 double bets\n- 4 treble bets\n- 1 fourfold accumulator bet\nat least two selections must win to gain a return."
+    }
+]

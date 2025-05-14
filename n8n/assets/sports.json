@@ -1,0 +1,766 @@
+[
+	{
+		"sporttype": 1,
+		"sportname": "Soccer"
+	},
+	{
+		"sporttype": 2,
+		"sportname": "Basketball"
+	},
+	{
+		"sporttype": 3,
+		"sportname": "Football"
+	},
+	{
+		"sporttype": 4,
+		"sportname": "Ice Hockey"
+	},
+	{
+		"sporttype": 5,
+		"sportname": "Tennis"
+	},
+	{
+		"sporttype": 6,
+		"sportname": "Volleyball"
+	},
+	{
+		"sporttype": 7,
+		"sportname": "Snooker/Pool"
+	},
+	{
+		"sporttype": 8,
+		"sportname": "Baseball"
+	},
+	{
+		"sporttype": 9,
+		"sportname": "Badminton"
+	},
+	{
+		"sporttype": 10,
+		"sportname": "Golf"
+	},
+	{
+		"sporttype": 11,
+		"sportname": "Motorsports"
+	},
+	{
+		"sporttype": 12,
+		"sportname": "Swimming"
+	},
+	{
+		"sporttype": 13,
+		"sportname": "Politics"
+	},
+	{
+		"sporttype": 14,
+		"sportname": "Water Polo"
+	},
+	{
+		"sporttype": 15,
+		"sportname": "Diving"
+	},
+	{
+		"sporttype": 16,
+		"sportname": "Boxing/MMA"
+	},
+	{
+		"sporttype": 17,
+		"sportname": "Archery"
+	},
+	{
+		"sporttype": 18,
+		"sportname": "Table Tennis"
+	},
+	{
+		"sporttype": 19,
+		"sportname": "Weightlifting"
+	},
+	{
+		"sporttype": 20,
+		"sportname": "Canoeing"
+	},
+	{
+		"sporttype": 21,
+		"sportname": "Gymnastics"
+	},
+	{
+		"sporttype": 22,
+		"sportname": "Athletics"
+	},
+	{
+		"sporttype": 23,
+		"sportname": "Equestrian"
+	},
+	{
+		"sporttype": 24,
+		"sportname": "Handball"
+	},
+	{
+		"sporttype": 25,
+		"sportname": "Darts"
+	},
+	{
+		"sporttype": 26,
+		"sportname": "Rugby"
+	},
+	{
+		"sporttype": 27,
+		"sportname": "Cricket"
+	},
+	{
+		"sporttype": 28,
+		"sportname": "Field Hockey"
+	},
+	{
+		"sporttype": 29,
+		"sportname": "Winter Sports"
+	},
+	{
+		"sporttype": 30,
+		"sportname": "Squash"
+	},
+	{
+		"sporttype": 31,
+		"sportname": "Entertainment"
+	},
+	{
+		"sporttype": 32,
+		"sportname": "Netball"
+	},
+	{
+		"sporttype": 33,
+		"sportname": "Cycling"
+	},
+	{
+		"sporttype": 34,
+		"sportname": "Fencing"
+	},
+	{
+		"sporttype": 35,
+		"sportname": "Judo"
+	},
+	{
+		"sporttype": 36,
+		"sportname": "M. Pentathlon"
+	},
+	{
+		"sporttype": 37,
+		"sportname": "Rowing"
+	},
+	{
+		"sporttype": 38,
+		"sportname": "Sailing"
+	},
+	{
+		"sporttype": 39,
+		"sportname": "Shooting"
+	},
+	{
+		"sporttype": 40,
+		"sportname": "Taekwondo"
+	},
+	{
+		"sporttype": 41,
+		"sportname": "Triathlon"
+	},
+	{
+		"sporttype": 42,
+		"sportname": "Wrestling "
+	},
+	{
+		"sporttype": 43,
+		"sportname": "E-Sports"
+	},
+	{
+		"sporttype": 44,
+		"sportname": "Muay Thai"
+	},
+	{
+		"sporttype": 45,
+		"sportname": "Beach Volleyball"
+	},
+	{
+		"sporttype": 46,
+		"sportname": "Unknown sport (Thai sport)"
+	},
+	{
+		"sporttype": 47,
+		"sportname": "Kabaddi"
+	},
+	{
+		"sporttype": 48,
+		"sportname": "Sepak Takraw"
+	},
+	{
+		"sporttype": 49,
+		"sportname": "Futsal"
+	},
+	{
+		"sporttype": 50,
+		"sportname": "Cricket"
+	},
+	{
+		"sporttype": 51,
+		"sportname": "Beach Soccer"
+	},
+	{
+		"sporttype": 52,
+		"sportname": "Poker"
+	},
+	{
+		"sporttype": 53,
+		"sportname": "Chess"
+	},
+	{
+		"sporttype": 54,
+		"sportname": "Olympics"
+	},
+	{
+		"sporttype": 55,
+		"sportname": "Finance"
+	},
+	{
+		"sporttype": 56,
+		"sportname": "Lotto"
+	},
+	{
+		"sporttype": 57,
+		"sportname": "Alpine Skiing"
+	},
+	{
+		"sporttype": 58,
+		"sportname": "Bandy"
+	},
+	{
+		"sporttype": 59,
+		"sportname": "Biathlon"
+	},
+	{
+		"sporttype": 60,
+		"sportname": "Curling"
+	},
+	{
+		"sporttype": 61,
+		"sportname": "Figure Skating"
+	},
+	{
+		"sporttype": 62,
+		"sportname": "Freestyle Skiing"
+	},
+	{
+		"sporttype": 63,
+		"sportname": "Luge"
+	},
+	{
+		"sporttype": 64,
+		"sportname": "Skeleton"
+	},
+	{
+		"sporttype": 65,
+		"sportname": "Ski Jumping"
+	},
+	{
+		"sporttype": 66,
+		"sportname": "Speed Skating"
+	},
+	{
+		"sporttype": 67,
+		"sportname": "upcoming sport"
+	},
+	{
+		"sporttype": 98,
+		"sportname": "Saba Virtual Sports"
+	},
+	{
+		"sporttype": 99,
+		"sportname": "Other Sports"
+	},
+	{
+		"sporttype": 124,
+		"sportname": "Microgaming Live"
+	},
+	{
+		"sporttype": 125,
+		"sportname": "Virtual Steeple Chase"
+	},
+	{
+		"sporttype": 126,
+		"sportname": "Virtual Harness Racing"
+	},
+	{
+		"sporttype": 127,
+		"sportname": "Virtual Motor Racing"
+	},
+	{
+		"sporttype": 128,
+		"sportname": "ODIN GAMING"
+	},
+	{
+		"sporttype": 130,
+		"sportname": "ASKMESLOT"
+	},
+	{
+		"sporttype": 131,
+		"sportname": "Funky Games"
+	},
+	{
+		"sporttype": 133,
+		"sportname": "SABA Keno"
+	},
+	{
+		"sporttype": 134,
+		"sportname": "Virtual Betby Basketball"
+	},
+	{
+		"sporttype": 135,
+		"sportname": "Smartsoft"
+	},
+	{
+		"sporttype": 138,
+		"sportname": "ON Casino"
+	},
+	{
+		"sporttype": 139,
+		"sportname": "HOTDOG"
+	},
+	{
+		"sporttype": 143,
+		"sportname": "PLAYSTAR"
+	},
+	{
+		"sporttype": 144,
+		"sportname": "GPI Live Casino"
+	},
+	{
+		"sporttype": 145,
+		"sportname": "GPI"
+	},
+	{
+		"sporttype": 146,
+		"sportname": "FA CHAI"
+	},
+	{
+		"sporttype": 147,
+		"sportname": "Virtually Soccer"
+	},
+	{
+		"sporttype": 148,
+		"sportname": "Playtech"
+	},
+	{
+		"sporttype": 149,
+		"sportname": "Saba Coins"
+	},
+	{
+		"sporttype": 150,
+		"sportname": "SABA.games Free Bets"
+	},
+	{
+		"sporttype": 151,
+		"sportname": "Horse Racing"
+	},
+	{
+		"sporttype": 152,
+		"sportname": "Greyhounds"
+	},
+	{
+		"sporttype": 153,
+		"sportname": "Harness"
+	},
+	{
+		"sporttype": 154,
+		"sportname": "Horse Racing Fixed Odds"
+	},
+	{
+		"sporttype": 155,
+		"sportname": "MG-RNG"
+	},
+	{
+		"sporttype": 156,
+		"sportname": "SEAL Entertainment"
+	},
+	{
+		"sporttype": 157,
+		"sportname": "Player Tips"
+	},
+	{
+		"sporttype": 158,
+		"sportname": "Jili"
+	},
+	{
+		"sporttype": 159,
+		"sportname": "YeeBet"
+	},
+	{
+		"sporttype": 160,
+		"sportname": "Lucky 3"
+	},
+	{
+		"sporttype": 161,
+		"sportname": "Number Game"
+	},
+	{
+		"sporttype": 162,
+		"sportname": "Live Casino"
+	},
+	{
+		"sporttype": 163,
+		"sportname": "Poker Games"
+	},
+	{
+		"sporttype": 164,
+		"sportname": "Happy 5"
+	},
+	{
+		"sporttype": 165,
+		"sportname": "Arcadia Gaming"
+	},
+	{
+		"sporttype": 167,
+		"sportname": "CG"
+	},
+	{
+		"sporttype": 168,
+		"sportname": "Happy 5 Linked Games"
+	},
+	{
+		"sporttype": 169,
+		"sportname": "Sports Lottery"
+	},
+	{
+		"sporttype": 170,
+		"sportname": "PP Live Casino"
+	},
+	{
+		"sporttype": 171,
+		"sportname": "Vgaming"
+	},
+	{
+		"sporttype": 172,
+		"sportname": "AdvantPlay"
+	},
+	{
+		"sporttype": 173,
+		"sportname": "Vgaming Free Bets"
+	},
+	{
+		"sporttype": 174,
+		"sportname": "AdvantPlay Mini"
+	},
+	{
+		"sporttype": 175,
+		"sportname": "Bitcoin"
+	},
+	{
+		"sporttype": 176,
+		"sportname": "FGG"
+	},
+	{
+		"sporttype": 177,
+		"sportname": "Virtual Dog Racing"
+	},
+	{
+		"sporttype": 178,
+		"sportname": "Virtual Football Cup"
+	},
+	{
+		"sporttype": 179,
+		"sportname": "Virtual Football League"
+	},
+	{
+		"sporttype": 180,
+		"sportname": "Virtual Soccer"
+	},
+	{
+		"sporttype": 181,
+		"sportname": "Virtual Horse Racing (Old)"
+	},
+	{
+		"sporttype": 182,
+		"sportname": "Virtual Greyhounds (Old)"
+	},
+	{
+		"sporttype": 183,
+		"sportname": "Virtual Speedway (Old)"
+	},
+	{
+		"sporttype": 184,
+		"sportname": "Virtual Motorsports (Old)"
+	},
+	{
+		"sporttype": 185,
+		"sportname": "Virtual Cycling (Old)"
+	},
+	{
+		"sporttype": 186,
+		"sportname": "Virtual Tennis"
+	},
+	{
+		"sporttype": 187,
+		"sportname": "Virtual Cricket"
+	},
+	{
+		"sporttype": 188,
+		"sportname": "Virtual Cock Fighting"
+	},
+	{
+		"sporttype": 189,
+		"sportname": "Yolo Play"
+	},
+	{
+		"sporttype": 190,
+		"sportname": "Virtual Soccer League"
+	},
+	{
+		"sporttype": 191,
+		"sportname": "Virtual Soccer Nation"
+	},
+	{
+		"sporttype": 192,
+		"sportname": "Virtual Soccer World Cup"
+	},
+	{
+		"sporttype": 193,
+		"sportname": "Virtual Basketball"
+	},
+	{
+		"sporttype": 194,
+		"sportname": "Virtual Soccer Asian Cup"
+	},
+	{
+		"sporttype": 195,
+		"sportname": "Vitual Dog"
+	},
+	{
+		"sporttype": 196,
+		"sportname": "Virtual Soccer Champions Cup"
+	},
+	{
+		"sporttype": 197,
+		"sportname": "Virtual Soccer Euro Cup"
+	},
+	{
+		"sporttype": 198,
+		"sportname": "Virtual Horse Racing"
+	},
+	{
+		"sporttype": 199,
+		"sportname": "Virtual Sports Parlay"
+	},
+	{
+		"sporttype": 200,
+		"sportname": "SABA.games"
+	},
+	{
+		"sporttype": 201,
+		"sportname": "Financials"
+	},
+	{
+		"sporttype": 202,
+		"sportname": "RNG Keno"
+	},
+	{
+		"sporttype": 203,
+		"sportname": "Microgaming Live Casino"
+	},
+	{
+		"sporttype": 204,
+		"sportname": "Colossus"
+	},
+	{
+		"sporttype": 205,
+		"sportname": "Microgaming RNG Casino"
+	},
+	{
+		"sporttype": 206,
+		"sportname": "Cockfighting"
+	},
+	{
+		"sporttype": 207,
+		"sportname": "Bullfighting"
+	},
+	{
+		"sporttype": 208,
+		"sportname": "Saba Casino"
+	},
+	{
+		"sporttype": 209,
+		"sportname": "Saba Casino - Mini Games"
+	},
+	{
+		"sporttype": 210,
+		"sportname": "RNG - Mobile"
+	},
+	{
+		"sporttype": 211,
+		"sportname": "Allbet"
+	},
+	{
+		"sporttype": 212,
+		"sportname": "Macau Games"
+	},
+	{
+		"sporttype": 213,
+		"sportname": "N"
+	},
+	{
+		"sporttype": 214,
+		"sportname": "Sa"
+	},
+	{
+		"sporttype": 215,
+		"sportname": "Sb"
+	},
+	{
+		"sporttype": 216,
+		"sportname": "UU SLOTS"
+	},
+	{
+		"sporttype": 217,
+		"sportname": "Sp"
+	},
+	{
+		"sporttype": 218,
+		"sportname": "S a+b"
+	},
+	{
+		"sporttype": 219,
+		"sportname": "Fishing World"
+	},
+	{
+		"sporttype": 220,
+		"sportname": "Lottery"
+	},
+	{
+		"sporttype": 221,
+		"sportname": "Exchange"
+	},
+	{
+		"sporttype": 222,
+		"sportname": "Table Game"
+	},
+	{
+		"sporttype": 223,
+		"sportname": "Togel 4D"
+	},
+	{
+		"sporttype": 224,
+		"sportname": "Funky Games (old)"
+	},
+	{
+		"sporttype": 225,
+		"sportname": "ION"
+	},
+	{
+		"sporttype": 227,
+		"sportname": "Live22"
+	},
+	{
+		"sporttype": 228,
+		"sportname": "WE Live Casino"
+	},
+	{
+		"sporttype": 229,
+		"sportname": "Nextspin"
+	},
+	{
+		"sporttype": 230,
+		"sportname": "FastSpin"
+	},
+	{
+		"sporttype": 231,
+		"sportname": "LG Virtual Sports"
+	},
+	{
+		"sporttype": 232,
+		"sportname": "PG Soft"
+	},
+	{
+		"sporttype": 233,
+		"sportname": "WM"
+	},
+	{
+		"sporttype": 234,
+		"sportname": "Joker"
+	},
+	{
+		"sporttype": 236,
+		"sportname": "GDG"
+	},
+	{
+		"sporttype": 237,
+		"sportname": "MaxGame"
+	},
+	{
+		"sporttype": 238,
+		"sportname": "Habanero"
+	},
+	{
+		"sporttype": 239,
+		"sportname": "BG"
+	},
+	{
+		"sporttype": 240,
+		"sportname": "SABA xD"
+	},
+	{
+		"sporttype": 241,
+		"sportname": "BBIN"
+	},
+	{
+		"sporttype": 242,
+		"sportname": "IBCBet Live Casino"
+	},
+	{
+		"sporttype": 243,
+		"sportname": "AE Sexy"
+	},
+	{
+		"sporttype": 244,
+		"sportname": "SA Gaming"
+	},
+	{
+		"sporttype": 245,
+		"sportname": "Virtual Games"
+	},
+	{
+		"sporttype": 246,
+		"sportname": "Saba Promotion"
+	},
+	{
+		"sporttype": 247,
+		"sportname": "SG"
+	},
+	{
+		"sporttype": 248,
+		"sportname": "PP"
+	},
+	{
+		"sporttype": 249,
+		"sportname": "Macau"
+	},
+	{
+		"sporttype": 250,
+		"sportname": "AG Casino"
+	},
+	{
+		"sporttype": 251,
+		"sportname": "Casino"
+	},
+	{
+		"sporttype": 252,
+		"sportname": "Bingo"
+	},
+	{
+		"sporttype": 253,
+		"sportname": "Games"
+	},
+	{
+		"sporttype": 254,
+		"sportname": "Playtech Casino"
+	},
+	{
+		"sporttype": 255,
+		"sportname": "Gold Deluxe"
+	}
+]

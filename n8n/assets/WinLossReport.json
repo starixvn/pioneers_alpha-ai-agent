@@ -1,0 +1,33 @@
+{
+  "Win_Loss_Detail": {
+    "Introduction": "Agent Win Loss Detail report provides detailed win/loss amounts of Agents in a selected period. Master can rely on the data to manage and minimize risks in business.",
+    "Search_Filters": [
+      "Select date range",
+      "Filter by product/game"
+    ],
+    "Report_Structure": {
+      "Agent": {
+        "Turnover": "Sum of stake",
+        "Net_Turnover": "Turnover exclude draw tickets (Sportsbook), or total valid bets that we use to compute commission (Gaming)",
+        "Bet_Count": "Number of bet ticket",
+        "Member_Total": "Member win loss included commission",
+        "Agent_Total": "Agent win loss included commission",
+        "Master_Total": "Master win loss included commission",
+        "Company_Total": "Amount_Agent_Gives_Upline"
+      },
+      "Calculation": {
+        "Member_Total": "Member Win/Loss amount + Member Comm",
+        "Agent_Comm": "stake * Agent discount * (1 -  Agent PT)",
+        "Agent_Net_Comm": "Agent Comm - Member Comm",
+        "Agent_Win_Loss": "- (Member Win/Loss amount * Agent PT)",
+        "Agent_Total": "Agent Win/Loss amount + Agent Net Comm",
+        "Master_Comm": "stake * Master discount * (1 -  Master PT)",
+        "Master_Net_Comm": "Master Comm - Member Comm",
+        "Master_Win_Loss": " - (Member Win/Loss amount * Master PT)",
+        "Master_Total": "Master Win/Loss amount + Master Net Comm",
+        "Amount_Agent_Gives_Upline": "- (Member Total + Agent Total)",
+        "Company_Total": "- (Member Total + Agent Total + Master Total)"
+      }
+  }
+}
+}

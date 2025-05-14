@@ -1,0 +1,786 @@
+[
+    {
+        "ProductID": 1,
+        "ProductName": "Sportsbook",
+        "Description": "SportsBook",
+        "ProductPrefix": "SB",
+        "Enabled": "Enable",
+        "EndOfSupportDate": "NaT"
+    },
+    {
+        "ProductID": 2,
+        "ProductName": "Racing",
+        "Description": "Horse Racing, Greyhound and Harness",
+        "ProductPrefix": "RB",
+        "Enabled": "Disable",
+        "EndOfSupportDate": "2017-11-30"
+    },
+    {
+        "ProductID": 3,
+        "ProductName": "Number Game",
+        "Description": "Number Game",
+        "ProductPrefix": "NG",
+        "Enabled": "Enable",
+        "EndOfSupportDate": "NaT"
+    },
+    {
+        "ProductID": 4,
+        "ProductName": "SLI Live Casino",
+        "Description": "SLI Live Casino",
+        "ProductPrefix": "LC",
+        "Enabled": "Disable",
+        "EndOfSupportDate": "2017-01-25"
+    },
+    {
+        "ProductID": 5,
+        "ProductName": "Virtual Sports",
+        "Description": "Virtual Sports",
+        "ProductPrefix": "VS",
+        "Enabled": "Enable",
+        "EndOfSupportDate": "NaT"
+    },
+    {
+        "ProductID": 6,
+        "ProductName": "Saba Casino",
+        "Description": "Change to Saba Casino (old name RNG Casino)",
+        "ProductPrefix": "CS",
+        "Enabled": "Enable",
+        "EndOfSupportDate": "NaT"
+    },
+    {
+        "ProductID": 7,
+        "ProductName": "Bingo",
+        "Description": "Bingo",
+        "ProductPrefix": "BG",
+        "Enabled": "Disable",
+        "EndOfSupportDate": "2017-01-11"
+    },
+    {
+        "ProductID": 8,
+        "ProductName": "RNG Keno",
+        "Description": "RNG Keno",
+        "ProductPrefix": "KN",
+        "Enabled": "Enable",
+        "EndOfSupportDate": "NaT"
+    },
+    {
+        "ProductID": 9,
+        "ProductName": "P2P",
+        "Description": "P2P",
+        "ProductPrefix": "P2P",
+        "Enabled": "Disable",
+        "EndOfSupportDate": "2017-01-11"
+    },
+    {
+        "ProductID": 10,
+        "ProductName": "Playtech Casino",
+        "Description": "Playtech Casino",
+        "ProductPrefix": "PTCS",
+        "Enabled": "Disable",
+        "EndOfSupportDate": "2016-01-29"
+    },
+    {
+        "ProductID": 11,
+        "ProductName": "AG Casino",
+        "Description": "AG Casino",
+        "ProductPrefix": "AGC",
+        "Enabled": "Enable",
+        "EndOfSupportDate": "NaT"
+    },
+    {
+        "ProductID": 12,
+        "ProductName": "Gold Deluxe",
+        "Description": "Gold Deluxe",
+        "ProductPrefix": "GD",
+        "Enabled": "Disable",
+        "EndOfSupportDate": "2020-09-06"
+    },
+    {
+        "ProductID": 13,
+        "ProductName": "Microgaming - Live Casino",
+        "Description": "Microgaming - Live Casino",
+        "ProductPrefix": "MGCLC",
+        "Enabled": "Disable",
+        "EndOfSupportDate": "2018-08-28"
+    },
+    {
+        "ProductID": 14,
+        "ProductName": "Macau",
+        "Description": "Macau",
+        "ProductPrefix": "VG",
+        "Enabled": "Disable",
+        "EndOfSupportDate": "2015-08-18"
+    },
+    {
+        "ProductID": 15,
+        "ProductName": "Colossus Bets",
+        "Description": "Colossus Bets",
+        "ProductPrefix": "CB",
+        "Enabled": "Disable",
+        "EndOfSupportDate": "2018-03-01"
+    },
+    {
+        "ProductID": 16,
+        "ProductName": "Sportsbook 2",
+        "Description": "SportsBook 2",
+        "ProductPrefix": "SB2",
+        "Enabled": "Enable",
+        "EndOfSupportDate": "NaT"
+    },
+    {
+        "ProductID": 17,
+        "ProductName": "Microgaming - RNG Casino",
+        "Description": "Microgaming - RNG Casino",
+        "ProductPrefix": "MGCRNG",
+        "Enabled": "Disable",
+        "EndOfSupportDate": "2018-08-28"
+    },
+    {
+        "ProductID": 18,
+        "ProductName": "RNG Slot",
+        "Description": "RNG Slot",
+        "ProductPrefix": "RNGS2",
+        "Enabled": "Enable",
+        "EndOfSupportDate": "NaT"
+    },
+    {
+        "ProductID": 19,
+        "ProductName": "Cockfighting",
+        "Description": "Cockfighting",
+        "ProductPrefix": "CF",
+        "Enabled": "Disable",
+        "EndOfSupportDate": "2017-01-01"
+    },
+    {
+        "ProductID": 20,
+        "ProductName": "Cricket",
+        "Description": "Cricket",
+        "ProductPrefix": "CR",
+        "Enabled": "Enable",
+        "EndOfSupportDate": "NaT"
+    },
+    {
+        "ProductID": 21,
+        "ProductName": "Allbet",
+        "Description": "Allbet",
+        "ProductPrefix": "AB",
+        "Enabled": "Enable",
+        "EndOfSupportDate": "NaT"
+    },
+    {
+        "ProductID": 22,
+        "ProductName": "Macau Games",
+        "Description": "Macau Games",
+        "ProductPrefix": "VB",
+        "Enabled": "Enable",
+        "EndOfSupportDate": "NaT"
+    },
+    {
+        "ProductID": 23,
+        "ProductName": "NG2",
+        "Description": "NG2",
+        "ProductPrefix": "NG2",
+        "Enabled": "Disable",
+        "EndOfSupportDate": "2023-07-18"
+    },
+    {
+        "ProductID": 24,
+        "ProductName": "Fishing World",
+        "Description": "Fishing World",
+        "ProductPrefix": "FW",
+        "Enabled": "Disable",
+        "EndOfSupportDate": "2021-01-30"
+    },
+    {
+        "ProductID": 25,
+        "ProductName": "Cash Out",
+        "Description": "Cash Out",
+        "ProductPrefix": "CO",
+        "Enabled": "Enable",
+        "EndOfSupportDate": "2022-01-10"
+    },
+    {
+        "ProductID": 26,
+        "ProductName": "Lucky 3",
+        "Description": "Lucky 3",
+        "ProductPrefix": "LK3",
+        "Enabled": "Disable",
+        "EndOfSupportDate": "2018-04-26"
+    },
+    {
+        "ProductID": 27,
+        "ProductName": "Virtual Sports 2",
+        "Description": "Virtual Sports 2",
+        "ProductPrefix": "VS2",
+        "Enabled": "Enable",
+        "EndOfSupportDate": "NaT"
+    },
+    {
+        "ProductID": 28,
+        "ProductName": "Lottery",
+        "Description": "Lottery",
+        "ProductPrefix": "LT",
+        "Enabled": "Enable",
+        "EndOfSupportDate": "NaT"
+    },
+    {
+        "ProductID": 29,
+        "ProductName": "Voidbrige Jackpot",
+        "Description": "Voidbrige Jackpot",
+        "ProductPrefix": "VJ",
+        "Enabled": "Enable",
+        "EndOfSupportDate": "NaT"
+    },
+    {
+        "ProductID": 30,
+        "ProductName": "Bullfighting",
+        "Description": "Bullfighting",
+        "ProductPrefix": "BF",
+        "Enabled": "Disable",
+        "EndOfSupportDate": "2018-03-01"
+    },
+    {
+        "ProductID": 31,
+        "ProductName": "Exchange",
+        "Description": "Exchange",
+        "ProductPrefix": "BX",
+        "Enabled": "Enable",
+        "EndOfSupportDate": "NaT"
+    },
+    {
+        "ProductID": 32,
+        "ProductName": "PP",
+        "Description": "Pragmatic Play",
+        "ProductPrefix": "PP",
+        "Enabled": "Enable",
+        "EndOfSupportDate": "NaT"
+    },
+    {
+        "ProductID": 33,
+        "ProductName": "Poker Games",
+        "Description": "Poker Games",
+        "ProductPrefix": "PG",
+        "Enabled": "Disable",
+        "EndOfSupportDate": "2019-04-16"
+    },
+    {
+        "ProductID": 34,
+        "ProductName": "Arcadia Gaming",
+        "Description": "Arcadia Gaming",
+        "ProductPrefix": "CC",
+        "Enabled": "Enable",
+        "EndOfSupportDate": "NaT"
+    },
+    {
+        "ProductID": 36,
+        "ProductName": "SG",
+        "Description": "SpadeGaming",
+        "ProductPrefix": "SG",
+        "Enabled": "Enable",
+        "EndOfSupportDate": "NaT"
+    },
+    {
+        "ProductID": 37,
+        "ProductName": "Saba Promotion",
+        "Description": "Saba Promotion",
+        "ProductPrefix": "SPR",
+        "Enabled": "Enable",
+        "EndOfSupportDate": "NaT"
+    },
+    {
+        "ProductID": 38,
+        "ProductName": "Virtual Games",
+        "Description": "Virtual Games",
+        "ProductPrefix": "VRG",
+        "Enabled": "Enable",
+        "EndOfSupportDate": "NaT"
+    },
+    {
+        "ProductID": 39,
+        "ProductName": "SA Gaming",
+        "Description": "SA Gaming",
+        "ProductPrefix": "SAG",
+        "Enabled": "Enable",
+        "EndOfSupportDate": "NaT"
+    },
+    {
+        "ProductID": 40,
+        "ProductName": "Table Game",
+        "Description": "Table Game",
+        "ProductPrefix": "TG",
+        "Enabled": "Enable",
+        "EndOfSupportDate": "NaT"
+    },
+    {
+        "ProductID": 41,
+        "ProductName": "Live Casino",
+        "Description": "Live Casino",
+        "ProductPrefix": "LC2",
+        "Enabled": "Enable",
+        "EndOfSupportDate": "NaT"
+    },
+    {
+        "ProductID": 42,
+        "ProductName": "SABA.games",
+        "Description": "change to SABA.games (old name Saba.club)",
+        "ProductPrefix": "SBC",
+        "Enabled": "Enable",
+        "EndOfSupportDate": "NaT"
+    },
+    {
+        "ProductID": 43,
+        "ProductName": "Togel 4D",
+        "Description": "Togel 4D",
+        "ProductPrefix": "I4D",
+        "Enabled": "Enable",
+        "EndOfSupportDate": "NaT"
+    },
+    {
+        "ProductID": 44,
+        "ProductName": "RNG Games",
+        "Description": "RNG Games",
+        "ProductPrefix": "LT2",
+        "Enabled": "Enable",
+        "EndOfSupportDate": "NaT"
+    },
+    {
+        "ProductID": 45,
+        "ProductName": "AE Sexy",
+        "Description": "AE Sexy",
+        "ProductPrefix": "SXG",
+        "Enabled": "Enable",
+        "EndOfSupportDate": "NaT"
+    },
+    {
+        "ProductID": 46,
+        "ProductName": "IBCBet Live Casino",
+        "Description": "IBCBet Live Casino",
+        "ProductPrefix": "IBCLC",
+        "Enabled": "Enable",
+        "EndOfSupportDate": "NaT"
+    },
+    {
+        "ProductID": 47,
+        "ProductName": "BBIN",
+        "Description": "BBIN Live Casino test",
+        "ProductPrefix": "BBIN",
+        "Enabled": "Enable",
+        "EndOfSupportDate": "NaT"
+    },
+    {
+        "ProductID": 48,
+        "ProductName": "GPI",
+        "Description": "Gameplay Interactive RNG Casino",
+        "ProductPrefix": "GPIRNG",
+        "Enabled": "Enable",
+        "EndOfSupportDate": "NaT"
+    },
+    {
+        "ProductID": 49,
+        "ProductName": "Virtual Sports 3 (Old)",
+        "Description": "Virtual Sports 3",
+        "ProductPrefix": "VS3",
+        "Enabled": "Enable",
+        "EndOfSupportDate": "2022-11-14"
+    },
+    {
+        "ProductID": 50,
+        "ProductName": "Funky Games (Old)",
+        "Description": "Funky Games (Old)",
+        "ProductPrefix": "RNGW",
+        "Enabled": "Enable",
+        "EndOfSupportDate": "NaT"
+    },
+    {
+        "ProductID": 51,
+        "ProductName": "WM",
+        "Description": "WM Live Casino",
+        "ProductPrefix": "WM",
+        "Enabled": "Enable",
+        "EndOfSupportDate": "NaT"
+    },
+    {
+        "ProductID": 52,
+        "ProductName": "ION",
+        "Description": "ION Live Casino",
+        "ProductPrefix": "ION",
+        "Enabled": "Enable",
+        "EndOfSupportDate": "NaT"
+    },
+    {
+        "ProductID": 53,
+        "ProductName": "RNG Casino",
+        "Description": "RNG Casino",
+        "ProductPrefix": "RNGC2",
+        "Enabled": "Enable",
+        "EndOfSupportDate": "NaT"
+    },
+    {
+        "ProductID": 54,
+        "ProductName": "Saba Virtual Sports",
+        "Description": "Saba Virtual Sports",
+        "ProductPrefix": "SBS2",
+        "Enabled": "Enable",
+        "EndOfSupportDate": "NaT"
+    },
+    {
+        "ProductID": 55,
+        "ProductName": "PG Soft",
+        "Description": "PG Soft",
+        "ProductPrefix": "PGS",
+        "Enabled": "Enable",
+        "EndOfSupportDate": "NaT"
+    },
+    {
+        "ProductID": 56,
+        "ProductName": "Joker",
+        "Description": "Joker",
+        "ProductPrefix": "JK",
+        "Enabled": "Enable",
+        "EndOfSupportDate": "NaT"
+    },
+    {
+        "ProductID": 57,
+        "ProductName": "BG",
+        "Description": "Big Gaming Live Casino",
+        "ProductPrefix": "BGG",
+        "Enabled": "Enable",
+        "EndOfSupportDate": "NaT"
+    },
+    {
+        "ProductID": 59,
+        "ProductName": "GDG",
+        "Description": "Gold Diamond Gaming",
+        "ProductPrefix": "GDG",
+        "Enabled": "Disable",
+        "EndOfSupportDate": "2021-08-30"
+    },
+    {
+        "ProductID": 60,
+        "ProductName": "MaxGame",
+        "Description": "MaxGame",
+        "ProductPrefix": "MXG",
+        "Enabled": "Enable",
+        "EndOfSupportDate": "NaT"
+    },
+    {
+        "ProductID": 61,
+        "ProductName": "Habanero",
+        "Description": "Habanero",
+        "ProductPrefix": "HB",
+        "Enabled": "Enable",
+        "EndOfSupportDate": "NaT"
+    },
+    {
+        "ProductID": 62,
+        "ProductName": "CG",
+        "Description": "Creative Gaming",
+        "ProductPrefix": "CG",
+        "Enabled": "Enable",
+        "EndOfSupportDate": "NaT"
+    },
+    {
+        "ProductID": 63,
+        "ProductName": "Sports Lottery",
+        "Description": "Sports Lottery",
+        "ProductPrefix": "SLT",
+        "Enabled": "Enable",
+        "EndOfSupportDate": "2025-12-11"
+    },
+    {
+        "ProductID": 64,
+        "ProductName": "Virtual Games",
+        "Description": "Virtual Games",
+        "ProductPrefix": "VRG2",
+        "Enabled": "Enable",
+        "EndOfSupportDate": "NaT"
+    },
+    {
+        "ProductID": 65,
+        "ProductName": "PP Live Casino",
+        "Description": "Pragmatic Live Casino",
+        "ProductPrefix": "PPL",
+        "Enabled": "Enable",
+        "EndOfSupportDate": "NaT"
+    },
+    {
+        "ProductID": 66,
+        "ProductName": "Vgaming",
+        "Description": "Vgaming",
+        "ProductPrefix": "VGA",
+        "Enabled": "Enable",
+        "EndOfSupportDate": "NaT"
+    },
+    {
+        "ProductID": 67,
+        "ProductName": "AdvantPlay",
+        "Description": "AdvantPlay",
+        "ProductPrefix": "AP",
+        "Enabled": "Enable",
+        "EndOfSupportDate": "NaT"
+    },
+    {
+        "ProductID": 68,
+        "ProductName": "AdvantPlay Mini",
+        "Description": "AdvantPlay Mini",
+        "ProductPrefix": "APM",
+        "Enabled": "Enable",
+        "EndOfSupportDate": "NaT"
+    },
+    {
+        "ProductID": 69,
+        "ProductName": "Bitcoin",
+        "Description": "Bitcoin",
+        "ProductPrefix": "BTC",
+        "Enabled": "Enable",
+        "EndOfSupportDate": "NaT"
+    },
+    {
+        "ProductID": 70,
+        "ProductName": "FGG",
+        "Description": "Guaranteed Gaming Live Casino",
+        "ProductPrefix": "FGGL",
+        "Enabled": "Enable",
+        "EndOfSupportDate": "NaT"
+    },
+    {
+        "ProductID": 71,
+        "ProductName": "Virtual Sports 6",
+        "Description": "Betby Virtual Sports",
+        "ProductPrefix": "VS6",
+        "Enabled": "Enable",
+        "EndOfSupportDate": "NaT"
+    },
+    {
+        "ProductID": 72,
+        "ProductName": "SEAL Entertainment",
+        "Description": "SEAL Entertainment",
+        "ProductPrefix": "SEA",
+        "Enabled": "Enable",
+        "EndOfSupportDate": "NaT"
+    },
+    {
+        "ProductID": 73,
+        "ProductName": "MG-RNG",
+        "Description": "Microgaming",
+        "ProductPrefix": "MGRNG",
+        "Enabled": "Enable",
+        "EndOfSupportDate": "NaT"
+    },
+    {
+        "ProductID": 74,
+        "ProductName": "Player Tips",
+        "Description": "Tips",
+        "ProductPrefix": "TIP",
+        "Enabled": "Enable",
+        "EndOfSupportDate": "NaT"
+    },
+    {
+        "ProductID": 75,
+        "ProductName": "Jili",
+        "Description": "Jili",
+        "ProductPrefix": "JIG",
+        "Enabled": "Enable",
+        "EndOfSupportDate": "NaT"
+    },
+    {
+        "ProductID": 76,
+        "ProductName": "YeeBet",
+        "Description": "YeeBet Gaming",
+        "ProductPrefix": "YB",
+        "Enabled": "Enable",
+        "EndOfSupportDate": "NaT"
+    },
+    {
+        "ProductID": 77,
+        "ProductName": "Virtual Sports 3",
+        "Description": "Leap Gaming VS",
+        "ProductPrefix": "LG",
+        "Enabled": "Enable",
+        "EndOfSupportDate": "NaT"
+    },
+    {
+        "ProductID": 78,
+        "ProductName": "UU SLOTS",
+        "Description": "UU SLOTS",
+        "ProductPrefix": "UUSL",
+        "Enabled": "Enable",
+        "EndOfSupportDate": "NaT"
+    },
+    {
+        "ProductID": 79,
+        "ProductName": "Live22",
+        "Description": "Live22",
+        "ProductPrefix": "L22",
+        "Enabled": "Enable",
+        "EndOfSupportDate": "NaT"
+    },
+    {
+        "ProductID": 80,
+        "ProductName": "WE Live Casino",
+        "Description": "World Entertainment Live Casino",
+        "ProductPrefix": "WE",
+        "Enabled": "Enable",
+        "EndOfSupportDate": "NaT"
+    },
+    {
+        "ProductID": 81,
+        "ProductName": "Saba Coins",
+        "Description": "",
+        "ProductPrefix": "SAC",
+        "Enabled": "Enable",
+        "EndOfSupportDate": "NaT"
+    },
+    {
+        "ProductID": 83,
+        "ProductName": "Virtual Sports 4",
+        "Description": "",
+        "ProductPrefix": "VS4",
+        "Enabled": "Enable",
+        "EndOfSupportDate": "NaT"
+    },
+    {
+        "ProductID": 84,
+        "ProductName": "Yolo Play",
+        "Description": "",
+        "ProductPrefix": "YOL",
+        "Enabled": "Enable",
+        "EndOfSupportDate": "NaT"
+    },
+    {
+        "ProductID": 85,
+        "ProductName": "Nextspin",
+        "Description": "Nextspin RNG Casino",
+        "ProductPrefix": "NS",
+        "Enabled": "Enable",
+        "EndOfSupportDate": "NaT"
+    },
+    {
+        "ProductID": 86,
+        "ProductName": "SABA xD",
+        "Description": "SABA xD",
+        "ProductPrefix": "SNG",
+        "Enabled": "Enable",
+        "EndOfSupportDate": "NaT"
+    },
+    {
+        "ProductID": 87,
+        "ProductName": "FastSpin",
+        "Description": "FastSpin",
+        "ProductPrefix": "FS",
+        "Enabled": "Enable",
+        "EndOfSupportDate": "NaT"
+    },
+    {
+        "ProductID": 88,
+        "ProductName": "Virtual Sports 5",
+        "Description": "Virtually Sports",
+        "ProductPrefix": "VS5",
+        "Enabled": "Enable",
+        "EndOfSupportDate": "NaT"
+    },
+    {
+        "ProductID": 89,
+        "ProductName": "FA CHAI",
+        "Description": "FA CHAI",
+        "ProductPrefix": "FAC",
+        "Enabled": "Enable",
+        "EndOfSupportDate": "NaT"
+    },
+    {
+        "ProductID": 90,
+        "ProductName": "GPI Live Casino",
+        "Description": "Gameplay Interactive Live Casino",
+        "ProductPrefix": "GPILC",
+        "Enabled": "Enable",
+        "EndOfSupportDate": "NaT"
+    },
+    {
+        "ProductID": 91,
+        "ProductName": "PLAYSTAR",
+        "Description": "PLAYSTAR RNG Casino",
+        "ProductPrefix": "PS",
+        "Enabled": "Enable",
+        "EndOfSupportDate": "NaT"
+    },
+    {
+        "ProductID": 95,
+        "ProductName": "HOTDOG",
+        "Description": "HOTDOG RNG Casino",
+        "ProductPrefix": "HOT",
+        "Enabled": "Enable",
+        "EndOfSupportDate": "NaT"
+    },
+    {
+        "ProductID": 96,
+        "ProductName": "ON Casino",
+        "Description": "ON Casino - Live Casino",
+        "ProductPrefix": "ON",
+        "Enabled": "Enable",
+        "EndOfSupportDate": "NaT"
+    },
+    {
+        "ProductID": 99,
+        "ProductName": "Smartsoft",
+        "Description": "Smartsoft",
+        "ProductPrefix": "SS",
+        "Enabled": "Enable",
+        "EndOfSupportDate": "NaT"
+    },
+    {
+        "ProductID": 100,
+        "ProductName": "Playtech",
+        "Description": "Playtech RNG Casino",
+        "ProductPrefix": "PTRNG",
+        "Enabled": "Enable",
+        "EndOfSupportDate": "NaT"
+    },
+    {
+        "ProductID": 102,
+        "ProductName": "SABA Keno",
+        "Description": "SABA Keno",
+        "ProductPrefix": "SBK",
+        "Enabled": "Enable",
+        "EndOfSupportDate": "NaT"
+    },
+    {
+        "ProductID": 103,
+        "ProductName": "ASKMESLOT",
+        "Description": "ASKMESLOT RNG Casino",
+        "ProductPrefix": "ASK",
+        "Enabled": "Enable",
+        "EndOfSupportDate": "NaT"
+    },
+    {
+        "ProductID": 104,
+        "ProductName": "Funky Games",
+        "Description": "Funky Games RNG Casino",
+        "ProductPrefix": "FG",
+        "Enabled": "Enable",
+        "EndOfSupportDate": "NaT"
+    },
+    {
+        "ProductID": 105,
+        "ProductName": "ODIN GAMING",
+        "Description": "ODIN GAMING RNG Casino",
+        "ProductPrefix": "ODG",
+        "Enabled": "Enable",
+        "EndOfSupportDate": "NaT"
+    },
+    {
+        "ProductID": 106,
+        "ProductName": "Virtual Sports 7",
+        "Description": "Kiron",
+        "ProductPrefix": "VS7",
+        "Enabled": "Enable",
+        "EndOfSupportDate": "NaT"
+    },
+    {
+        "ProductID": 107,
+        "ProductName": "Microgaming Live",
+        "Description": "Mircogaming Live Casino",
+        "ProductPrefix": "MGLC",
+        "Enabled": "Enable",
+        "EndOfSupportDate": "NaT"
+    }
+]

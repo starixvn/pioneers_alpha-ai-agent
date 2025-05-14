@@ -1,0 +1,174 @@
+[
+	{
+		"CurrencyID": 2,
+		"CurrencyName": "RM"
+	},
+	{
+		"CurrencyID": 3,
+		"CurrencyName": "US$"
+	},
+	{
+		"CurrencyID": 5,
+		"CurrencyName": "HK$"
+	},
+	{
+		"CurrencyID": 6,
+		"CurrencyName": "EURO"
+	},
+	{
+		"CurrencyID": 7,
+		"CurrencyName": "DON"
+	},
+	{
+		"CurrencyID": 9,
+		"CurrencyName": "AUD"
+	},
+	{
+		"CurrencyID": 10,
+		"CurrencyName": "INR1"
+	},
+	{
+		"CurrencyID": 11,
+		"CurrencyName": "USTM"
+	},
+	{
+		"CurrencyID": 12,
+		"CurrencyName": "GBP"
+	},
+	{
+		"CurrencyID": 13,
+		"CurrencyName": "RMB"
+	},
+	{
+		"CurrencyID": 14,
+		"CurrencyName": "PC"
+	},
+	{
+		"CurrencyID": 15,
+		"CurrencyName": "IN"
+	},
+	{
+		"CurrencyID": 16,
+		"CurrencyName": "Yen"
+	},
+	{
+		"CurrencyID": 18,
+		"CurrencyName": "uustest"
+	},
+	{
+		"CurrencyID": 20,
+		"CurrencyName": "UUS"
+	},
+	{
+		"CurrencyID": 22,
+		"CurrencyName": "IND"
+	},
+	{
+		"CurrencyID": 33,
+		"CurrencyName": "IDD"
+	},
+	{
+		"CurrencyID": 34,
+		"CurrencyName": "IDR"
+	},
+	{
+		"CurrencyID": 35,
+		"CurrencyName": "$US"
+	},
+	{
+		"CurrencyID": 41,
+		"CurrencyName": "CHF"
+	},
+	{
+		"CurrencyID": 42,
+		"CurrencyName": "PE"
+	},
+	{
+		"CurrencyID": 43,
+		"CurrencyName": "THB"
+	},
+	{
+		"CurrencyID": 45,
+		"CurrencyName": "Won"
+	},
+	{
+		"CurrencyID": 47,
+		"CurrencyName": "DDD"
+	},
+	{
+		"CurrencyID": 48,
+		"CurrencyName": "ZAR"
+	},
+	{
+		"CurrencyID": 50,
+		"CurrencyName": "CAN"
+	},
+	{
+		"CurrencyID": 51,
+		"CurrencyName": "INH"
+	},
+	{
+		"CurrencyID": 52,
+		"CurrencyName": "DKK"
+	},
+	{
+		"CurrencyID": 53,
+		"CurrencyName": "SEK"
+	},
+	{
+		"CurrencyID": 54,
+		"CurrencyName": "NOK"
+	},
+	{
+		"CurrencyID": 57,
+		"CurrencyName": "CZK"
+	},
+	{
+		"CurrencyID": 58,
+		"CurrencyName": "RON"
+	},
+	{
+		"CurrencyID": 64,
+		"CurrencyName": "UT"
+	},
+	{
+		"CurrencyID": 67,
+		"CurrencyName": "HKK"
+	},
+	{
+		"CurrencyID": 69,
+		"CurrencyName": "MMK"
+	},
+	{
+		"CurrencyID": 71,
+		"CurrencyName": "KHR"
+	},
+	{
+		"CurrencyID": 72,
+		"CurrencyName": "YNG"
+	},
+	{
+		"CurrencyID": 81,
+		"CurrencyName": "CY"
+	},
+	{
+		"CurrencyID": 82,
+		"CurrencyName": "BRL"
+	},
+	{
+		"CurrencyID": 84,
+		"CurrencyName": "COP"
+	},
+	{
+		"CurrencyID": 90,
+		"CurrencyName": "AED"
+	},
+	{
+		"CurrencyID": 95,
+		"CurrencyName": "USD"
+	},
+	{
+		"CurrencyID": 97,
+		"CurrencyName": "BDT"
+	}
+]

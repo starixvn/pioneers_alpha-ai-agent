@@ -1,0 +1,864 @@
+{
+  "name": "AskAlphaDev",
+  "nodes": [
+    {
+      "parameters": {
+        "public": true,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -80,
+        240
+      ],
+      "id": "39435322-761b-41d8-818f-1d68e495cfd3",
+      "name": "When chat message received",
+      "webhookId": "3c10ec81-404c-46ed-87b7-bbe2dcf715c2"
+    },
+    {
+      "parameters": {
+        "options": {
+          "systemMessage": "=# Overview:\nYou are a professional AI assistant with access to internal vector data and external APIs. You must always use the available tools to retrieve answers. Do **not** rely on your own memory, prior model knowledge, or external web content.\n\n## Available Tools:\n- `AikoData`: Use for semantic vector search in internal knowledge base (`table: how_to_use_768`, `column: document`).\n- `AlphaAPI`: Use to get real-time data like reports, balances, outstanding information.\n\nBefore responding:\n- Always call `listTools` first.\n- Then execute the correct tool via `executeTool` based on user query.\n\n## Parameters:\n- `customerId`: {{ $json.custId }}\n- `roleId`: {{ $json.roleId }}\n\n## Response Rules:\n\n1. **Only respond using results returned from tools.**\n   - If no result is returned from the tool, respond with:  \n     **\"No information available in context.\"**\n\n2. **Reject irrelevant or nonsense questions.**\n   - If the question is unrelated to company systems or customer operations, respond with:  \n     **\"This assistant only handles topics related to internal systems and customer data. Please ask a relevant question.\"**\n\n3. **Never use model memory or guess answers.**\n   - Do not answer from general knowledge.\n   - Do not provide explanations unless the tool result includes them.\n\n## Formatting:\n- Always use a professional, concise tone.\n- Convert relative dates (e.g., “yesterday”, “today”) into format: `yyyy-MM-dd`.\n- Use this expression for today's date: `{{ $today.format('yyyy-MM-dd') }}`"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.9,
+      "position": [
+        640,
+        340
+      ],
+      "id": "c4aee5d8-4de3-4947-bae4-359700ef1769",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        540,
+        560
+      ],
+      "id": "582ccae6-3aa9-4e47-bf0b-809560d5ab68",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "FU80gVwAp1hXD96r",
+          "name": "OpenAi Viet"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.memoryPostgresChat",
+      "typeVersion": 1.3,
+      "position": [
+        660,
+        560
+      ],
+      "id": "438ea297-6a11-435b-b747-09314137b749",
+      "name": "Postgres Chat Memory",
+      "credentials": {
+        "postgres": {
+          "id": "t9TvOc8swAKS4HPZ",
+          "name": "Postgres account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Alpha AI Agent\n",
+        "height": 980,
+        "width": 1920,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -180,
+        120
+      ],
+      "typeVersion": 1,
+      "id": "ac83bc99-5618-4c24-a5b9-c31f6deb4bff",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "name": "AikoData",
+        "description": "Stores internal knowledge. Use vector search to retrieve the most relevant information in order to accurately answer the user's question.",
+        "topK": 1
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolVectorStore",
+      "typeVersion": 1,
+      "position": [
+        1080,
+        660
+      ],
+      "id": "3d190143-9a78-49bc-be22-783b0abfbc02",
+      "name": "AikoData"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Danh sách các từ viết liền thông dụng cần thay thế\nconst commonTerms = {\n  'productid': 'product id',\n  'sporttype': 'sport type',\n  'bettype': 'bet type',\n  'winloss': 'win loss'\n  // Thêm các từ viết liền khác nếu cần\n};\nconst userInput = $input.first().json.chatInput;\n\nfunction normalizeText(text) {\n  // Chuyển tất cả về chữ thường\n  text = text.toLowerCase();\n\n  // Thay thế các từ viết liền thông dụng\n  for (let term in commonTerms) {\n    const regex = new RegExp(term, 'g');\n    text = text.replace(regex, commonTerms[term]);\n  }\n  // Loại bỏ các ký tự đặc biệt như dấu gạch dưới và dấu cách\n  text = text.replace(/[_\\s]+/g, ' ');  // Thay dấu gạch dưới và dấu cách bằng dấu cách duy nhất\n\n  // Trả về văn bản đã chuẩn hóa\n  return text;\n}\n\nconst formattedInput = {\n  chatInput: normalizeText(userInput)\n};\nreturn formattedInput;"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        160,
+        240
+      ],
+      "id": "f70b81ea-1df0-42df-aa49-28a113930a3a",
+      "name": "FormatInupt"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "72f3ee46-c231-4ba3-8326-b85fe49943e3",
+              "name": "sessionId",
+              "value": "={{ $('When chat message received').item.json.sessionId }}",
+              "type": "string"
+            },
+            {
+              "id": "e571ea3d-abb8-4b73-bc36-107b33f181b7",
+              "name": "chatInput",
+              "value": "={{ $json.chatInput }}",
+              "type": "string"
+            },
+            {
+              "id": "778ba84d-1de4-406c-8e38-3ab04a153933",
+              "name": "sourceType",
+              "value": "Chat",
+              "type": "string"
+            },
+            {
+              "id": "a8a0270b-a82d-40e0-abcf-03c602ad7684",
+              "name": "custId",
+              "value": "1176086",
+              "type": "string"
+            },
+            {
+              "id": "c2822721-bf2b-488a-ab92-60406cdba3ca",
+              "name": "roleId",
+              "value": "2",
+              "type": "string"
+            },
+            {
+              "id": "f3bb06da-2d4e-4eb5-b38b-5fef03ae5037",
+              "name": "system",
+              "value": "mbc",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        380,
+        240
+      ],
+      "id": "857c177d-9dda-475d-b40e-5d983be53c72",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        1340,
+        820
+      ],
+      "id": "8e0a9cc2-3e0e-4b8f-b1fa-5f78d3d44a8e",
+      "name": "OpenAI Chat Model1",
+      "credentials": {
+        "openAiApi": {
+          "id": "FU80gVwAp1hXD96r",
+          "name": "OpenAi Viet"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "tableName": "how_to_use_768",
+        "options": {
+          "distanceStrategy": "cosine",
+          "columnNames": {
+            "values": {
+              "contentColumnName": "document"
+            }
+          },
+          "metadata": {
+            "metadataValues": [
+              {
+                "name": "=level",
+                "value": "={{(() => {\n  const mapping = {\n    1: 'member',\n    2: 'agent',\n    3: 'master',\n    4: 'super'\n  };\n\n  const steps = ['Edit Fields', 'Edit Fields2', 'Edit Fields1'];\n  for (const step of steps) {\n    if ($(step).isExecuted) {\n      const roleId = $(step).item.json.roleId;\n      return mapping[roleId] || 'unknown';\n    }\n  }\n\n  return 'unknown';\n})()}}"
+              },
+              {
+                "name": "market",
+                "value": "={{(() => {\n  const steps = ['Edit Fields', 'Edit Fields2', 'Edit Fields1'];\n  for (const step of steps) {\n    if ($(step).isExecuted) {\n      const system = $(step).item.json.system;\n      return system ? system.toLowerCase() : \"\";\n    }\n  }\n  return \"\";\n})()}}"
+              }
+            ]
+          }
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStorePGVector",
+      "typeVersion": 1.1,
+      "position": [
+        1020,
+        820
+      ],
+      "id": "494acfd3-03f7-44d3-9954-0459b579e3bb",
+      "name": "Postgres PGVector Store1",
+      "credentials": {
+        "postgres": {
+          "id": "Xd1cMYloYDsY9wrM",
+          "name": "Postgres account 3"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": "nomic-embed-text:latest"
+      },
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOllama",
+      "typeVersion": 1,
+      "position": [
+        1140,
+        960
+      ],
+      "id": "a82c4aed-6e32-48f2-9e61-b8188c1b1dd3",
+      "name": "Embeddings Ollama",
+      "credentials": {
+        "ollamaApi": {
+          "id": "34T1zTuvahPX64a8",
+          "name": "Ollama account 3"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "sendmessageV1",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -80,
+        440
+      ],
+      "id": "93968383-14b3-4cac-8804-e2e763fe203d",
+      "name": "Webhook",
+      "webhookId": "7294e06d-30ae-4822-904e-3270009f9f26"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "72f3ee46-c231-4ba3-8326-b85fe49943e3",
+              "name": "sessionId",
+              "value": "={{$json.body.sessionId}}",
+              "type": "string"
+            },
+            {
+              "id": "e571ea3d-abb8-4b73-bc36-107b33f181b7",
+              "name": "chatInput",
+              "value": "={{$json.body.chatInput}}",
+              "type": "string"
+            },
+            {
+              "id": "e49f2da0-8f10-41ae-8d82-af44b0f5b038",
+              "name": "sourceType",
+              "value": "Webhook",
+              "type": "string"
+            },
+            {
+              "id": "43c7b169-1126-4a93-b3e0-de455e267f2f",
+              "name": "custId",
+              "value": "={{$json.body.parameters.custId}}",
+              "type": "number"
+            },
+            {
+              "id": "6e12961a-7ea1-44cd-ac01-6956ba44a10c",
+              "name": "roleId",
+              "value": "={{$json.body.parameters.roleId}}",
+              "type": "number"
+            },
+            {
+              "id": "b5774a98-f9b5-49e2-aea6-8e925a4ecaf5",
+              "name": "system",
+              "value": "={{$json.body.parameters.system}}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        160,
+        440
+      ],
+      "id": "91dad9ab-1829-42f5-8a1a-39e52ab372ac",
+      "name": "Edit Fields1"
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "=[\n{\n   \"message\": \"{{$json.output}}\"\n}\n]",
+        "options": {
+          "responseCode": 200
+        }
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        1480,
+        280
+      ],
+      "id": "65318de9-696e-4eda-8ae3-58f0ad8d0b47",
+      "name": "Respond to Webhook"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Hàm escape JSON string cho các ký tự đặc biệt\nfunction escapeJSONString(str) {\n  return str\n    .replace(/\\\\/g, '\\\\\\\\')   // escape dấu \\\n    .replace(/\"/g, '\\\\\"')     // escape dấu \"\n    .replace(/\\n/g, '\\\\n')    // escape newline\n    .replace(/\\r/g, '\\\\r')    // escape carriage return\n    .replace(/\\t/g, '\\\\t');   // escape tab\n}\n\n// Lấy dữ liệu từ input (giả sử là $json.output)\nconst originalMessage = $json.output || '';\n\n// Escape và định dạng JSON\nconst escapedMessage = escapeJSONString(originalMessage);\n\n// Trả về kết quả theo định dạng n8n\nreturn [\n  {\n    json: {\n      output: escapedMessage\n    }\n  }\n];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1280,
+        280
+      ],
+      "id": "e43fd59b-5564-40cb-8d58-50240fc57c03",
+      "name": "FormatOutput"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "1458235a-d9c0-44c7-b4c9-385b4a0fe7a8",
+              "leftValue": "={{ $('Edit Fields1').isExecuted }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1000,
+        340
+      ],
+      "id": "7152ed4d-9cfd-4ec3-82f6-658c6984a34f",
+      "name": "If"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        1480,
+        600
+      ],
+      "id": "6d27834f-b384-4dd7-a837-754f47d94c3d",
+      "name": "No Operation, do nothing"
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "={{ $fromAI(\"tool\", \"the selected tool to use\") }}",
+        "toolParameters": "={{ $fromAI('parameters', 'the parameters for the choosen tool') }}"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        860,
+        760
+      ],
+      "id": "a9df17e4-396f-4d3e-acdb-297b0b706541",
+      "name": "AlphaAPI Execute",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "KHy7tTsW3dw4G6xa",
+          "name": "MCP Client (STDIO) account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        700,
+        760
+      ],
+      "id": "acdb4041-af97-4a14-9847-4aeb4b3d2811",
+      "name": "AlphaAPI Tool",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "KHy7tTsW3dw4G6xa",
+          "name": "MCP Client (STDIO) account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "updates": [
+          "message"
+        ],
+        "additionalFields": {}
+      },
+      "id": "672b69fd-bcab-4bb0-9d8b-cbd5b383f0f5",
+      "name": "Telegram Trigger",
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1,
+      "position": [
+        -80,
+        660
+      ],
+      "webhookId": "a6cf9349-f0b2-4666-b880-b819b47ceea3",
+      "credentials": {
+        "telegramApi": {
+          "id": "EMQLdtPvD2pFowez",
+          "name": "Telegram Aiko"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "6d77c227-bc72-480a-9ffb-166f3b7ca8cc",
+              "leftValue": "={{ $json.message.text }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "exists",
+                "singleValue": true
+              }
+            },
+            {
+              "id": "35e9cbc1-6344-42af-b699-9b078735c730",
+              "leftValue": "={{ $json.message.text }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        160,
+        660
+      ],
+      "id": "e305b22d-d1b9-4dac-8074-8efbe8cb93fa",
+      "name": "If1"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "72f3ee46-c231-4ba3-8326-b85fe49943e3",
+              "name": "sessionId",
+              "value": "={{ $json.message.from.id }}",
+              "type": "string"
+            },
+            {
+              "id": "e571ea3d-abb8-4b73-bc36-107b33f181b7",
+              "name": "chatInput",
+              "value": "={{ $json.message.text }}",
+              "type": "string"
+            },
+            {
+              "id": "778ba84d-1de4-406c-8e38-3ab04a153933",
+              "name": "sourceType",
+              "value": "Chat",
+              "type": "string"
+            },
+            {
+              "id": "a8a0270b-a82d-40e0-abcf-03c602ad7684",
+              "name": "custId",
+              "value": "1176086",
+              "type": "string"
+            },
+            {
+              "id": "c2822721-bf2b-488a-ab92-60406cdba3ca",
+              "name": "roleId",
+              "value": "2",
+              "type": "string"
+            },
+            {
+              "id": "f3bb06da-2d4e-4eb5-b38b-5fef03ae5037",
+              "name": "system",
+              "value": "mbc",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        340,
+        540
+      ],
+      "id": "d2a1ca11-3847-4533-8279-051fcb1b8a23",
+      "name": "Edit Fields2"
+    },
+    {
+      "parameters": {
+        "chatId": "={{$node['Telegram Trigger'].json['message']['chat']['id']}}",
+        "text": "={{ $json.output }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1480,
+        440
+      ],
+      "id": "fc97f8e2-5f42-4c0a-9b46-b12e0df5b2e8",
+      "name": "Telegram",
+      "webhookId": "4c273beb-6077-4ae5-92ce-79deee103a76",
+      "credentials": {
+        "telegramApi": {
+          "id": "EMQLdtPvD2pFowez",
+          "name": "Telegram Aiko"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "1458235a-d9c0-44c7-b4c9-385b4a0fe7a8",
+              "leftValue": "={{ $('Edit Fields2').isExecuted }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1280,
+        440
+      ],
+      "id": "e86560e9-880b-4fb4-9129-9142a3d5798f",
+      "name": "If2"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "FormatInupt",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Postgres Chat Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AikoData": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "FormatInupt": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AikoData",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Postgres PGVector Store1": {
+      "ai_vectorStore": [
+        [
+          {
+            "node": "AikoData",
+            "type": "ai_vectorStore",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embeddings Ollama": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Postgres PGVector Store1",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields1": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "FormatOutput": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "FormatOutput",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "If2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AlphaAPI Execute": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AlphaAPI Tool": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Telegram Trigger": {
+      "main": [
+        [
+          {
+            "node": "If1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If1": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields2": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If2": {
+      "main": [
+        [
+          {
+            "node": "Telegram",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "No Operation, do nothing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "f9087380-545b-4409-8693-c17f92c061e5",
+  "meta": {
+    "instanceId": "98bfed1c0f22fa9e07d0e38dc58da94b0281d63095bd4ba14894d42a90a063e3"
+  },
+  "id": "eUznGAbBAYO4dEtM",
+  "tags": []
+}

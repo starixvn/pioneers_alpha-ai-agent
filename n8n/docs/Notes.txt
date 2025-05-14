@@ -1,0 +1,15 @@
+select * from how_to_use
+where metadata::text like '%789y%'
+		and metadata::text like '%agent%'
+ORDER BY id ASC LIMIT 100
+
+-----------------------
+2025/05/14
+- Add telegram trigger
+- change code Postgre on query metadata
+- add prompt to ignore chatInput out of the scope
+
+Todo:
+- 
+- Telegram: call api to get customer info
+- Validate params before call tool execute
