@@ -8,9 +8,9 @@ import { TopBalanceResponse } from "./types";
 const formatTopBalance = (data: TopBalanceResponse[]) => {
   const topBalance = data.map((item) =>
     [
-      `Username: ${item.userName || "Unknown"}`,
-      `Balance: ${item.balance.toFixed(2) || "Unknown"}`,
-    ].join("\n")
+      `${item.username.padEnd(50, " ") || "Unknown"}`,
+      `${item.balance.toFixed(2) || "Unknown"}`,
+    ].join(" / ")
   );
 
   return topBalance.join("\n");
@@ -29,7 +29,7 @@ export default function registerGetTopBalanceTool(
       top: z
         .number()
         .min(1)
-        .max(1000)
+        .max(100)
         .describe("Number of top accounts to retrieve"),
     },
     async ({ custId, roleId, top }) => {

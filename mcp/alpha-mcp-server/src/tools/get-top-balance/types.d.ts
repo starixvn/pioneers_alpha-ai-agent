@@ -1,4 +1,4 @@
 export interface TopBalanceResponse {
-  userName: string;
+  username: string;
   balance: number;
 }

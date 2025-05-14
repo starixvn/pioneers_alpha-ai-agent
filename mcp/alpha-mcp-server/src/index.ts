@@ -57,7 +57,7 @@ const server = new McpServer({
               type: "number",
               description: "Number of top accounts to retrieve",
               minimum: 1,
-              maximum: 1000,
+              maximum: 100,
               default: 10,
             },
           },
