@@ -91,7 +91,7 @@ const server = new McpServer({
               maximum: 4,
             },
           },
-          required: ["custId", "roleId"],
+          required: ["username", "custId", "roleId"],
         },
       },
       "get-win-loss": {
