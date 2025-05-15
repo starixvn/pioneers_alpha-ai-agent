@@ -64,15 +64,15 @@ const server = new McpServer({
           required: ["custId", "roleId"],
         },
       },
-      "get-downline-balance": {
+      "get-balance-by-username": {
         description:
-          "Retrieves detailed balance information of specific downline of a customer and role.",
+          "Retrieves detailed balance information for a specific down line by username of a customer and role.",
         parameters: {
           type: "object",
           properties: {
             username: {
               type: "string",
-              description: "Username of downline",
+              description: "Username of down line",
               required: true,
               length: {
                 min: 1,
