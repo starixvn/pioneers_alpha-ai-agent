@@ -41,7 +41,7 @@ export default function registerGetTopBalanceTool(
           content: [
             {
               type: "text",
-              text: "No information available.",
+              text: "No information is available.",
             },
           ],
         };

@@ -64,6 +64,36 @@ const server = new McpServer({
           required: ["custId", "roleId"],
         },
       },
+      "get-downline-balance": {
+        description:
+          "Retrieves detailed balance information of specific downline of a customer and role.",
+        parameters: {
+          type: "object",
+          properties: {
+            username: {
+              type: "string",
+              description: "Username of downline",
+              required: true,
+              length: {
+                min: 1,
+                max: 50,
+              },
+            },
+            custId: {
+              type: "number",
+              description: "Customer ID",
+              minimum: 1,
+            },
+            roleId: {
+              type: "number",
+              description: "Customer Role ID",
+              minimum: 1,
+              maximum: 4,
+            },
+          },
+          required: ["custId", "roleId"],
+        },
+      },
       "get-win-loss": {
         description:
           "Retrieves detailed win/loss information for a specific customer and role in a specific date.",
