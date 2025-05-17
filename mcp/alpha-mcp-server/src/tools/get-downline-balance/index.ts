@@ -91,7 +91,7 @@ export default function registerGetDownlineBalanceTool(
   NWS_API_BASE: string
 ) {
   server.tool(
-    "get-downline-balance",
+    "get-balance-by-username",
     "Retrieves detailed balance information for a specific down line by username of a customer and role.",
     {
       username: z.string().describe("Username of downline"),
