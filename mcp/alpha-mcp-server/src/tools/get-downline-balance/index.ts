@@ -92,7 +92,7 @@ export default function registerGetDownlineBalanceTool(
 ) {
   server.tool(
     "get-downline-balance",
-    "Retrieves detailed balance information of specific downline of a customer and role.",
+    "Retrieves detailed balance information for a specific down line by username of a customer and role.",
     {
       username: z.string().describe("Username of downline"),
       custId: z.number().min(1).describe("Customer ID"),
@@ -108,7 +108,7 @@ export default function registerGetDownlineBalanceTool(
           content: [
             {
               type: "text",
-              text: "No information is available",
+              text: "No information is available.",
             },
           ],
         };
@@ -123,7 +123,7 @@ export default function registerGetDownlineBalanceTool(
           content: [
             {
               type: "text",
-              text: "No information is available",
+              text: "No information is available.",
             },
           ],
         };
