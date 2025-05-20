@@ -73,14 +73,15 @@ export default function registerGetWinLossTool(
 ) {
   server.tool(
     "get-win-loss",
-    "Retrieves detailed win/loss information for a specific customer and role in a specific date.",
+    "Retrieves detailed win/loss information for a specific customer and role in a range between from date and to date.",
     {
       custId: z.number().min(1).describe("Customer ID"),
       roleId: z.number().min(1).max(4).describe("Customer Role ID"),
-      date: z.string().min(1).describe("Date in YYYY-MM-DD format"),
+      fromDate: z.string().min(1).describe("Date in YYYY-MM-DD format"),
+      toDate: z.string().min(1).describe("Date in YYYY-MM-DD format"),
     },
-    async ({ custId, roleId, date }) => {
-      const url = `${NWS_API_BASE}/WinLoss/GetWinLoss?custId=${custId}&custLevelId=${roleId}&date=${date}`;
+    async ({ custId, roleId, fromDate, toDate }) => {
+      const url = `${NWS_API_BASE}/WinLoss/GetWinLoss2?custId=${custId}&custLevelId=${roleId}&fromDate=${fromDate}&toDate=${toDate}`;
       const data = await makeNWSRequest<WinLossResponse>(url);
 
       if (!data) {

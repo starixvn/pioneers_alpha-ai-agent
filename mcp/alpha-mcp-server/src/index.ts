@@ -96,7 +96,7 @@ const server = new McpServer({
       },
       "get-win-loss": {
         description:
-          "Retrieves detailed win/loss information for a specific customer and role in a specific date.",
+          "Retrieves detailed win/loss information for a specific customer and role in a range between from date and to date.",
         parameters: {
           type: "object",
           properties: {
@@ -111,12 +111,16 @@ const server = new McpServer({
               minimum: 1,
               maximum: 4,
             },
-            date: {
+            fromDate: {
+              type: "string",
+              description: "Date in format YYYY-MM-DD",
+            },
+            toDate: {
               type: "string",
               description: "Date in format YYYY-MM-DD",
             },
           },
-          required: ["custId", "roleId", "date"],
+          required: ["custId", "roleId", "fromDate", "toDate"],
         },
       },
     },
