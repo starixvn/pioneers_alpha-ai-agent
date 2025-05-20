@@ -1,0 +1,100 @@
+import { z } from "zod";
+import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
+import { formatDecimal } from "../helpers";
+import { getWinLoss } from "../api/alpha_api";
+import { WinLossResponse } from "../api/alpha_api.types";
+
+function formatMasterWinLoss(data: WinLossResponse) {
+  return [
+    `Turnover: ${formatDecimal(data.turnover)}`,
+    `Gross Commission: ${formatDecimal(data.grossComm)}`,
+    `Downline Total: ${formatDecimal(data.masterTotal)}`,
+    `Super Win/Loss: ${formatDecimal(data.superWinLoss)}`,
+    `Super Commission: ${formatDecimal(data.superComm)}`,
+    `Super Total: ${formatDecimal(data.superTotal)}`,
+    `Company Win/Loss: ${formatDecimal(data.companyWinLoss)}`,
+  ].join("\n");
+}
+
+function formatAgentWinLoss(data: WinLossResponse) {
+  return [
+    `Turnover: ${formatDecimal(data.turnover)}`,
+    `Gross Commission: ${formatDecimal(data.grossComm)}`,
+    `Downline Total: ${formatDecimal(data.agentTotal)}`,
+    `Master Win/Loss: ${formatDecimal(data.masterWinLoss)}`,
+    `Master Commission: ${formatDecimal(data.masterComm)}`,
+    `Master Total: ${formatDecimal(data.masterTotal)}`,
+    `Company Win/Loss: ${formatDecimal(data.companyWinLoss)}`,
+  ].join("\n");
+}
+
+function formatMemberWinLoss(data: WinLossResponse) {
+  return [
+    `Turnover: ${formatDecimal(data.turnover)}`,
+    `Gross Commission: ${formatDecimal(data.grossComm)}`,
+    `Member Win/Loss: ${formatDecimal(data.memberWinLoss)}`,
+    `Member Commission: ${formatDecimal(data.memberComm)}`,
+    `Member Total: ${formatDecimal(data.memberTotal)}`,
+    `Agent Win/Loss: ${formatDecimal(data.agentWinLoss)}`,
+    `Agent Commission: ${formatDecimal(data.agentComm)}`,
+    `Agent Total: ${formatDecimal(data.agentTotal)}`,
+    `Company Win/Loss: ${formatDecimal(data.companyWinLoss)}`,
+  ].join("\n");
+}
+
+function formatMemberDownlineWinLoss(data: WinLossResponse) {
+  return [
+    `Member Win/Loss: ${formatDecimal(data.memberWinLoss)}`,
+    `Member Commission: ${formatDecimal(data.memberComm)}`,
+    `Member Total: ${formatDecimal(data.memberTotal)}`,
+  ].join("\n");
+}
+
+function formatWinLoss(data: WinLossResponse, roleId: number) {
+  switch (roleId) {
+    case 4:
+      return formatMasterWinLoss(data);
+    case 3:
+      return formatAgentWinLoss(data);
+    case 2:
+      return formatMemberWinLoss(data);
+    default:
+      return formatMemberDownlineWinLoss(data);
+  }
+}
+
+export default function registerWinLossTool(server: McpServer) {
+  server.tool(
+    "winloss-report",
+    "Retrieves detailed win loss information for a specific customer and role in a range between from date and to date",
+    {
+      custId: z.number().min(1).describe("Customer ID"),
+      roleId: z
+        .number()
+        .min(1)
+        .max(4)
+        .describe(
+          "Customer Role ID (e.g., 4 for Super, 3 for Master, 2 for Agent)"
+        ),
+      fromDate: z.string().describe("From date format in YYYY-MM-DD"),
+      toDate: z.string().describe("To date format in YYYY-MM-DD"),
+    },
+    async ({ custId, roleId, fromDate, toDate }) => {
+      const winloss = await getWinLoss(custId, roleId, fromDate, toDate);
+      const winlossText = winloss
+        ? `Your Win/Loss ${
+            fromDate === toDate ? fromDate : `${fromDate} - ${toDate}`
+          }:\n${formatWinLoss(winloss, roleId)}`
+        : "No information is available.";
+
+      return {
+        content: [
+          {
+            type: "text",
+            text: winlossText,
+          },
+        ],
+      };
+    }
+  );
+}

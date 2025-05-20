@@ -1,15 +1,19 @@
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 
-import registerGetBalanceInfoTool from "./get-balance-info";
-import registerGetTopBalanceTool from "./get-top-balance";
-import registerGetDownlineBalanceTool from "./get-downline-balance";
-import registerGetWinLossTool from "./get-win-loss";
-
-const NWS_API_BASE = "https://alpha-api.nexdev.net/api";
+import registerMyBalanceTool from "./my_balance";
+import registerTopBalanceTool from "./top_balance";
+import registerDownlineBalanceTool from "./downline_balance";
+import registerWinLossTool from "./winloss";
+import registerTopOutstandingTool from "./top_outstanding";
+import registerDownlineOutstandingTool from "./downline_outstanding";
+import registerDomainTool from "./domain";
 
 export default function registerTools(server: McpServer) {
-  registerGetBalanceInfoTool(server, NWS_API_BASE);
-  registerGetTopBalanceTool(server, NWS_API_BASE);
-  registerGetDownlineBalanceTool(server, NWS_API_BASE);
-  registerGetWinLossTool(server, NWS_API_BASE);
+  registerMyBalanceTool(server);
+  registerTopBalanceTool(server);
+  registerDownlineBalanceTool(server);
+  registerWinLossTool(server);
+  registerTopOutstandingTool(server);
+  registerDownlineOutstandingTool(server);
+  registerDomainTool(server);
 }

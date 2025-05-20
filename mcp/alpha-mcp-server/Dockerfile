@@ -10,6 +10,12 @@ FROM deps AS builder
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY mcp/alpha-mcp-server/ .
+
+# Register TRANSFORM_CONFIG argument for transforming by environment
+ARG TRANSFORM_CONFIG
+RUN echo $TRANSFORM_CONFIG
+COPY "mcp/alpha-mcp-server/.env.$TRANSFORM_CONFIG" .env.production
+
 RUN yarn build
 
 FROM deps AS runner
@@ -21,5 +27,3 @@ EXPOSE 5000
 ENV PORT=5000
 
 CMD ["node", "build/index.js"]
-
-

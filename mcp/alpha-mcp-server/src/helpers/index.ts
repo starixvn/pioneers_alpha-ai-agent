@@ -1,26 +1,46 @@
-const USER_AGENT = "alpha-api/1.0";
+const HEADERS = {
+  "Uesr-Agent": "alpha-api/1.0",
+  Accept: "application/geo+json",
+};
+const DECIMALFORMAT = new Intl.NumberFormat("en-US", {
+  style: "decimal",
+  minimumFractionDigits: 2,
+  maximumFractionDigits: 2,
+});
 
-// Helper function for making NWS API requests
-async function makeNWSRequest<T>(url: string): Promise<T | null> {
-  const headers = {
-    "User-Agent": USER_AGENT,
-    Accept: "application/geo+json",
-  };
-
+export async function makeNWSRequest<T>(url: string): Promise<T | null> {
   try {
-    console.log("url", url);
-    const response = await fetch(url, { headers });
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    return (await response.json()) as T;
+    const response = await fetch(url, { headers: HEADERS });
+    return await buildResponse<T>(response);
   } catch (error) {
-    console.error("Error making NWS request:", error);
+    console.error("Error making GET request:", error);
     return null;
   }
 }
 
-const getRoleName = (roleId: number) => {
+export async function post<T>(url: string, data: any): Promise<T | null> {
+  try {
+    const response = await fetch(url, {
+      method: "POST",
+      headers: HEADERS,
+      body: JSON.stringify(data),
+    });
+    return await buildResponse<T>(response);
+  } catch (error) {
+    console.error("Error making POST request:", error);
+    return null;
+  }
+}
+
+async function buildResponse<T>(response: Response): Promise<T | null> {
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  }
+
+  return (await response.json()) as T;
+}
+
+export function getRoleName(roleId: number) {
   switch (roleId) {
     case 4:
       return "Super";
@@ -33,6 +53,8 @@ const getRoleName = (roleId: number) => {
     default:
       return "Unknown";
   }
-};
+}
 
-export { makeNWSRequest, getRoleName };
+export function formatDecimal(value: number) {
+  return DECIMALFORMAT.format(value);
+}
