@@ -3,6 +3,10 @@ where metadata::text like '%789y%'
 		and metadata::text like '%agent%'
 ORDER BY id ASC LIMIT 100
 
+Execute Tool
+{{ $fromAI('tool', 'the selected tool to use') }}
+
+{{ $fromAI('parameters', 'the parameters for the choosen tool') }}
 -----------------------
 2025/05/14
 - Add telegram trigger
