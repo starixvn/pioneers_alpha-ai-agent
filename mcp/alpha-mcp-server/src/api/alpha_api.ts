@@ -42,13 +42,25 @@ export async function getTopBalance(
   return await makeNWSRequest<TopBalanceResponse[]>(url);
 }
 
+export async function getTopWinLoss(
+  custId: number,
+  roleId: number,
+  fromDate: string,
+  toDate: string,
+  top: number
+) {
+  const url = `${ALPHA_API_BASE}/WinLoss/GetTopUsername2?custId=${custId}&custLevelId=${roleId}&fromDate=${fromDate}&toDate=${toDate}&top=${top}`;
+  return await makeNWSRequest<string[]>(url);
+}
+
 export async function getWinLoss(
   custId: number,
   roleId: number,
   fromDate: string,
-  toDate: string
+  toDate: string,
+  groupProduct: string
 ) {
-  const url = `${ALPHA_API_BASE}/WinLoss/GetWinLoss2?custId=${custId}&custLevelId=${roleId}&fromDate=${fromDate}&toDate=${toDate}`;
+  const url = `${ALPHA_API_BASE}/WinLoss/GetWinLoss2?custId=${custId}&custLevelId=${roleId}&fromDate=${fromDate}&toDate=${toDate}&groupProduct=${groupProduct}`;
   return await makeNWSRequest<WinLossResponse>(url);
 }
 

@@ -78,9 +78,20 @@ export default function registerWinLossTool(server: McpServer) {
         ),
       fromDate: z.string().describe("From date format in YYYY-MM-DD"),
       toDate: z.string().describe("To date format in YYYY-MM-DD"),
+      groupProduct: z
+        .string()
+        .describe(
+          "Group of product to filter (e.g., All for getting all products, Sportsbook for getting Sportsbook only, Casino for getting others products)"
+        ),
     },
-    async ({ custId, roleId, fromDate, toDate }) => {
-      const winloss = await getWinLoss(custId, roleId, fromDate, toDate);
+    async ({ custId, roleId, fromDate, toDate, groupProduct = "All" }) => {
+      const winloss = await getWinLoss(
+        custId,
+        roleId,
+        fromDate,
+        toDate,
+        groupProduct
+      );
       const winlossText = winloss
         ? `Your Win/Loss ${
             fromDate === toDate ? fromDate : `${fromDate} - ${toDate}`
