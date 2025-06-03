@@ -18,17 +18,17 @@ Todo:
 - Telegram: call api to get customer info
 - Validate params before call tool execute
 
------
-suggest solution or prompt for AI agent this case:
-- i am using n8n to an Ai assistance for betting company
-- role is anwser question from user,
-- i use ai agent with mcp tool which include some tool to fectch data from api
-- the issue now is when use just ask to get a part of the out put from API
-example
- tool name : get_winloss_report 
- api output include: turnover value, win values
- user just want to get turnover value only 
- user query: get my turnover today
+------------
+2025/05/31
+
+Khó khăn:
+- Không execute tool khi chưa đủ thông tin cần thiết.
+	- Auto fill params dựa trên description (tự động lấy default)
+- Text classifier: cần phân biệt case cung cấp thêm thông tin param yêu cầu 
+- Flow wait for approve (human in loop)
+- Cần chuẩn hóa nội dung, schema in/out put của mổi tool
+
+Read more on:
 - Multi - agent
 - Strutured parser output
 - Human in loop
