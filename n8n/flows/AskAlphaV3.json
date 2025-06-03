@@ -1,0 +1,539 @@
+{
+  "name": "AskAlphaV3",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -860,
+        -240
+      ],
+      "id": "f6b9d4fb-a16a-48fa-87a0-0254b4450ef1",
+      "name": "When chat message received",
+      "webhookId": "2b4e7f3a-7d23-42cc-9a3c-302abf00d20b"
+    },
+    {
+      "parameters": {
+        "inputText": "={{ $json.chatInput }}",
+        "categories": {
+          "categories": [
+            {
+              "category": "AikoData",
+              "description": "=Use when user ask questions like \"what\", \"how to\", \"explain\", \"guide\", then categorize as AikoData."
+            },
+            {
+              "category": "AlphaAPI",
+              "description": "=Use when user fetch dynamic, real-time data.\nCommon words/pharases:\nget tool list, get balance, balance of user01, get winloss report, outstanding, available domain,..."
+            }
+          ]
+        },
+        "options": {
+          "fallback": "other",
+          "systemPromptTemplate": "Please classify the text provided by the user into one of the following categories: {categories}, and use the provided formatting instructions below. Don't explain, and only output the json."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.textClassifier",
+      "typeVersion": 1,
+      "position": [
+        -300,
+        -240
+      ],
+      "id": "309dc558-19a3-4c89-963f-d3963b2f744e",
+      "name": "Text Classifier"
+    },
+    {
+      "parameters": {
+        "options": {
+          "systemPromptTemplate": "You are an assistant for question-answering tasks. Use the following pieces of retrieved context to answer the question.\nIf you don't know the answer, just say that you don't know, don't try to make up an answer.\n\n----------------\nContext: {context}"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainRetrievalQa",
+      "typeVersion": 1.5,
+      "position": [
+        180,
+        -560
+      ],
+      "id": "2956b359-f68b-479f-85fc-37e6459f8062",
+      "name": "Question and Answer Chain"
+    },
+    {
+      "parameters": {
+        "tableName": "how_to_use_768",
+        "options": {
+          "distanceStrategy": "cosine",
+          "columnNames": {
+            "values": {
+              "contentColumnName": "document"
+            }
+          }
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStorePGVector",
+      "typeVersion": 1.1,
+      "position": [
+        480,
+        -380
+      ],
+      "id": "5a26f42c-f3c2-4679-bd31-c83549353790",
+      "name": "Postgres PGVector Store1",
+      "credentials": {
+        "postgres": {
+          "id": "Xd1cMYloYDsY9wrM",
+          "name": "Postgres account 3"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": "nomic-embed-text:latest"
+      },
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOllama",
+      "typeVersion": 1,
+      "position": [
+        800,
+        -380
+      ],
+      "id": "2f51dcff-61db-4878-b341-e10f075e7822",
+      "name": "Embeddings Ollama",
+      "credentials": {
+        "ollamaApi": {
+          "id": "34T1zTuvahPX64a8",
+          "name": "Ollama account 3"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.retrieverVectorStore",
+      "typeVersion": 1,
+      "position": [
+        180,
+        -380
+      ],
+      "id": "2938331b-ed96-4280-a2dc-1aab1f4063ee",
+      "name": "Vector Store Retriever"
+    },
+    {
+      "parameters": {
+        "connectionType": "sse"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        280,
+        -20
+      ],
+      "id": "f7ab443d-3a23-4cd6-aeed-2aa312eaf8fb",
+      "name": "AlphaAPI Tool",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "KHy7tTsW3dw4G6xa",
+          "name": "MCP Client (STDIO) account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "={{ $fromAI('tool', 'the selected tool to use') }}",
+        "toolParameters": "={{ $fromAI('parameters', 'the parameters for the chosen tool') }}"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        420,
+        -20
+      ],
+      "id": "06b99e68-e57b-47db-9283-e385978056b0",
+      "name": "AlphaAPI Execute",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "KHy7tTsW3dw4G6xa",
+          "name": "MCP Client (STDIO) account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        -200,
+        -20
+      ],
+      "id": "1c5ca7aa-6258-41c3-913e-c14019af1734",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "FU80gVwAp1hXD96r",
+          "name": "OpenAi Viet"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-4o-mini-2024-07-18",
+          "mode": "list",
+          "cachedResultName": "GPT-4O-MINI-2024-07-18"
+        },
+        "messages": {
+          "values": [
+            {}
+          ]
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        180,
+        140
+      ],
+      "id": "14d09afa-c8c8-492d-b622-f9435da3ef5c",
+      "name": "ChitChat",
+      "credentials": {
+        "openAiApi": {
+          "id": "FU80gVwAp1hXD96r",
+          "name": "OpenAi Viet"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.chatInput }} with customer Id: {{ $json.custId }}, roleId: {{ $json.roleId }}, site: {{ $json.site }}",
+        "options": {
+          "systemMessage": "=You are helpful assisstant\n\n[Instructions]:\n\n- Always run the Tool List node first to retrieve the list of available tools. This step is mandatory before attempting to execute any tool.\n\n- Analyze the Tool List output to understand the available tools, their names, input/output structures, and functionality.\n\n- Based on the user's request and the available tools, determine which tool(s) to use.\n\n- Use the appropriate tool via the Execute method to perform the required action.\n\n- Ensure tool inputs are correctly formatted and relevant to the tool's requirements.\n\n- Always follow this order:\nTool List → Analyze → Choose Tool → Execute → Respond\n\n- Maintain precision, efficiency, and alignment with the user's intent in all interactions.\n\n- Hide the Cusomter Id, Role Id, Site in the respond data.\n\n[Formattings]:\n\n- Convert all relative dates (e.g., \"yesterday\", \"today\", \"last week\", \"this month\") into exact ISO 8601 date strings using the GMT-4 timezone (Etc/GMT+4). Do not use natural language in the output.\n\n- Use this expression for today’s date: {{ $now.setZone('Etc/GMT+4').format('MM/dd/yyyy') }}\n\n- All dates must be in the format: MM/dd/yyyy\n\n- Assume current time is always GMT-4 (fixed, no daylight saving time).\n\n- Use ISO 8601 week logic:\n   - Weeks start on Monday.\n   - \"Last week\" means the previous full Monday–Sunday range in GMT-4.\n   - \"This month\" means from the 1st to today’s date, in GMT-4.\n\n\n\n"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.9,
+      "position": [
+        180,
+        -240
+      ],
+      "id": "4655f656-0344-4347-8ad3-e4b09e51f723",
+      "name": "ToolList"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Danh sách các từ viết liền thông dụng cần thay thế\nconst commonTerms = {\n  'productid': 'product id',\n  'sporttype': 'sport type',\n  'bettype': 'bet type',\n  'win loss': 'winloss'\n  // Thêm các từ viết liền khác nếu cần\n};\nconst userInput = $input.first().json.chatInput;\n\nfunction normalizeText(text) {\n  // Chuyển tất cả về chữ thường\n  text = text.toLowerCase();\n\n  // Thay thế các từ viết liền thông dụng\n  for (let term in commonTerms) {\n    const regex = new RegExp(term, 'g');\n    text = text.replace(regex, commonTerms[term]);\n  }\n  // Loại bỏ các ký tự đặc biệt như dấu gạch dưới và dấu cách\n  text = text.replace(/[_\\s]+/g, ' ');  // Thay dấu gạch dưới và dấu cách bằng dấu cách duy nhất\n\n  // Trả về văn bản đã chuẩn hóa\n  return text;\n}\n\nconst formattedInput = {\n  chatInput: normalizeText(userInput)\n};\nreturn formattedInput;"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -680,
+        -240
+      ],
+      "id": "3af9c595-f8c6-4404-a97a-58ac2c207614",
+      "name": "FormatInupt"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "72f3ee46-c231-4ba3-8326-b85fe49943e3",
+              "name": "sessionId",
+              "value": "={{ $('When chat message received').item.json.sessionId }}",
+              "type": "string"
+            },
+            {
+              "id": "e571ea3d-abb8-4b73-bc36-107b33f181b7",
+              "name": "chatInput",
+              "value": "={{ $json.chatInput }}",
+              "type": "string"
+            },
+            {
+              "id": "778ba84d-1de4-406c-8e38-3ab04a153933",
+              "name": "sourceType",
+              "value": "Chat",
+              "type": "string"
+            },
+            {
+              "id": "a8a0270b-a82d-40e0-abcf-03c602ad7684",
+              "name": "custId",
+              "value": "23003140",
+              "type": "string"
+            },
+            {
+              "id": "c2822721-bf2b-488a-ab92-60406cdba3ca",
+              "name": "roleId",
+              "value": "4",
+              "type": "string"
+            },
+            {
+              "id": "3ff0684c-ff72-42c0-876d-d7ee8db77d12",
+              "name": "site",
+              "value": "BEST-ODDS",
+              "type": "string"
+            },
+            {
+              "id": "f3bb06da-2d4e-4eb5-b38b-5fef03ae5037",
+              "name": "system",
+              "value": "mbc",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -480,
+        -240
+      ],
+      "id": "bca852af-5def-419e-8368-298fdcaf5121",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.memoryPostgresChat",
+      "typeVersion": 1.3,
+      "position": [
+        140,
+        -20
+      ],
+      "id": "3bd37f4d-1d99-4cd3-9930-c6bed7dad85a",
+      "name": "Postgres Chat Memory",
+      "credentials": {
+        "postgres": {
+          "id": "t9TvOc8swAKS4HPZ",
+          "name": "Postgres account 2"
+        }
+      },
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "jsCode": "// Hàm escape JSON string cho các ký tự đặc biệt\nfunction escapeJSONString(str) {\n  return str\n    .replace(/\\\\/g, '\\\\\\\\')   // escape dấu \\\n    .replace(/\"/g, '\\\\\"')     // escape dấu \"\n    .replace(/\\n/g, '\\\\n')    // escape newline\n    .replace(/\\r/g, '\\\\r')    // escape carriage return\n    .replace(/\\t/g, '\\\\t');   // escape tab\n}\n\n// Lấy dữ liệu từ input (giả sử là $json.output)\nconst originalMessage = $input.first().json.message.content || '';\n\n// Escape và định dạng JSON\nconst escapedMessage = escapeJSONString(originalMessage);\n\n// Trả về kết quả theo định dạng n8n\nreturn [\n  {\n    json: {\n      output: escapedMessage\n    }\n  }\n];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        700,
+        -140
+      ],
+      "id": "38d3c28e-0625-4020-8b6b-04bd6c5c5e88",
+      "name": "FormatOutput"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Hàm escape JSON string cho các ký tự đặc biệt\nfunction escapeJSONString(str) {\n  return str\n    .replace(/\\\\/g, '\\\\\\\\')   // escape dấu \\\n    .replace(/\"/g, '\\\\\"')     // escape dấu \"\n    .replace(/\\n/g, '\\\\n')    // escape newline\n    .replace(/\\r/g, '\\\\r')    // escape carriage return\n    .replace(/\\t/g, '\\\\t');   // escape tab\n}\n\n// Lấy dữ liệu từ input (giả sử là $json.output)\nconst originalMessage = $input.first().json.response || '';\n\n// Escape và định dạng JSON\nconst escapedMessage = escapeJSONString(originalMessage);\n\n// Trả về kết quả theo định dạng n8n\nreturn [\n  {\n    json: {\n      output: escapedMessage\n    }\n  }\n];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        540,
+        -560
+      ],
+      "id": "336e9fe6-31d8-40a2-92d5-7abee567c873",
+      "name": "FormatOutput1"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "FormatInupt",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Text Classifier": {
+      "main": [
+        [
+          {
+            "node": "Question and Answer Chain",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "ToolList",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "ChitChat",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Postgres PGVector Store1": {
+      "ai_vectorStore": [
+        [
+          {
+            "node": "Vector Store Retriever",
+            "type": "ai_vectorStore",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embeddings Ollama": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Postgres PGVector Store1",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Vector Store Retriever": {
+      "ai_retriever": [
+        [
+          {
+            "node": "Question and Answer Chain",
+            "type": "ai_retriever",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Question and Answer Chain": {
+      "main": [
+        [
+          {
+            "node": "FormatOutput1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AlphaAPI Tool": {
+      "ai_tool": [
+        [
+          {
+            "node": "ToolList",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AlphaAPI Execute": {
+      "ai_tool": [
+        [
+          {
+            "node": "ToolList",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Question and Answer Chain",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "Text Classifier",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "ToolList",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ToolList": {
+      "main": [
+        []
+      ]
+    },
+    "FormatInupt": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Text Classifier",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ChitChat": {
+      "main": [
+        [
+          {
+            "node": "FormatOutput",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Postgres Chat Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "ToolList",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "FormatOutput": {
+      "main": [
+        []
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "31acdd5d-73a7-4ad5-af55-cc6b7030cffc",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "98bfed1c0f22fa9e07d0e38dc58da94b0281d63095bd4ba14894d42a90a063e3"
+  },
+  "id": "GVpIDXy6xrNcnFOG",
+  "tags": []
+}
