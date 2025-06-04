@@ -71,14 +71,14 @@ export async function getDownlineOutstanding(
   language: string = "en-US"
 ) {
   const downlineInfo = await getDownlineInfo(custId, username);
-
   if (!downlineInfo || !isDirectDownline(roleId, downlineInfo)) {
     return null;
   }
 
   const url = `${ALPHA_API_BASE}/Outstanding/GetDownlineOutstanding?custId=${custId}&custLevelId=${roleId}&downlineId=${
     downlineInfo.custId
-  }&downlineLevelId=${downlineInfo.roleId + 1}language=${language}`;
+  }&downlineLevelId=${downlineInfo.roleId + 1}&language=${language}`;
+  console.log(url);
   return await makeNWSRequest<OutstandingResponse>(url);
 }
 
