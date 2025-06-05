@@ -30,7 +30,7 @@ function formatTopOutstanding(response: OutstandingResponse, roleName: string) {
 export default function registerTopOutstandingTool(server: McpServer) {
   server.tool(
     "top-x-outstanding",
-    "Retrieves a list of top number accounts that have highest outstanding amount for a specific customer and role",
+    "[Top Outstanding Lookup] Retrieve a list of accounts with the highest outstanding amounts for a specific customer and role. Use this tool when the user asks for top outstanding, highest liability, or most exposed accounts. Input required: Customer ID, Role ID (2=Agent, 3=Master, 4=Super), and the number of top accounts to retrieve.",
     {
       custId: z.number().min(1).describe("Customer ID"),
       roleId: z
@@ -38,7 +38,7 @@ export default function registerTopOutstandingTool(server: McpServer) {
         .min(2)
         .max(4)
         .describe(
-          "Customer Role ID (e.g., 4 for Super, 3 for Master, 2 for Agent)"
+          "Customer Role ID (e.g., 4 = Super, 3 = Master, 2 = Agent)"
         ),
       top: z
         .number()

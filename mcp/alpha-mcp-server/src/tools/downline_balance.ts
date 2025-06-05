@@ -66,7 +66,7 @@ function formatMemberBalance(data: DownlineBalanceResponse) {
 export default function registerDownlineBalanceTool(server: McpServer) {
   server.tool(
     "balance-by-username",
-    "Retrieves detailed balance information for a specific down line by username of a customer and role",
+    "[Down line Balance Lookup] Retrieve detailed balance information for a specific down line (agent, master, or member) by username, customer ID, and role ID. Use this tool when the user asks for balance, credit, or financial details of a down line, agent, master, or member. Input required: Customer ID, Role ID (2=Agent, 3=Master, 4=Super), and Username.",
     {
       custId: z.number().min(1).describe("Customer ID"),
       roleId: z
@@ -74,7 +74,7 @@ export default function registerDownlineBalanceTool(server: McpServer) {
         .min(2)
         .max(4)
         .describe(
-          "Customer Role ID (e.g., 4 for Super, 3 for Master, 2 for Agent)"
+          "Customer Role ID (e.g., 4 = Super, 3 = Master, 2 = Agent)"
         ),
       username: z.string().describe("Username of downline"),
     },

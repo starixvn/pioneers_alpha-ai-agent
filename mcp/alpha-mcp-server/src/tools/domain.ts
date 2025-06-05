@@ -26,9 +26,9 @@ function formatDomains(data: DomainResponse[]) {
 export default function registerDomainTool(server: McpServer) {
   server.tool(
     "available-domains",
-    "Retrieves a list of available domains include agency and member for a specific site",
+    "[Domain Lookup] Retrieve all available domains for a given site, organized by agency and member categories. Use this tool when the user asks for a list of domains, available domains, agency domains, member domains, or domain information for a specific site. Input required: site name (e.g., BEST-ODDS, 722222).",
     {
-      site: z.string().describe("Site name (e.g., MBC, IBC, 789y)"),
+      site: z.string().describe("Site name (e.g., BEST-ODDS, 722222)"),
     },
     async ({ site }) => {
       const data = await getDomains(site);

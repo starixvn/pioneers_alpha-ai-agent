@@ -8,11 +8,11 @@ function formatMasterWinLoss(data: WinLossResponse) {
   return [
     `Turnover: ${formatDecimal(data.turnover)}`,
     `Gross Commission: ${formatDecimal(data.grossComm)}`,
-    `Downline Total: ${formatDecimal(data.masterTotal)}`,
-    `Super Win/Loss: ${formatDecimal(data.superWinLoss)}`,
+    `Down line Total: ${formatDecimal(data.masterTotal)}`,
+    `Super Win Loss: ${formatDecimal(data.superWinLoss)}`,
     `Super Commission: ${formatDecimal(data.superComm)}`,
     `Super Total: ${formatDecimal(data.superTotal)}`,
-    `Company Win/Loss: ${formatDecimal(data.companyWinLoss)}`,
+    `Company Win Loss: ${formatDecimal(data.companyWinLoss)}`,
   ].join("\n");
 }
 
@@ -20,11 +20,11 @@ function formatAgentWinLoss(data: WinLossResponse) {
   return [
     `Turnover: ${formatDecimal(data.turnover)}`,
     `Gross Commission: ${formatDecimal(data.grossComm)}`,
-    `Downline Total: ${formatDecimal(data.agentTotal)}`,
-    `Master Win/Loss: ${formatDecimal(data.masterWinLoss)}`,
+    `Down line Total: ${formatDecimal(data.agentTotal)}`,
+    `Master Win Loss: ${formatDecimal(data.masterWinLoss)}`,
     `Master Commission: ${formatDecimal(data.masterComm)}`,
     `Master Total: ${formatDecimal(data.masterTotal)}`,
-    `Company Win/Loss: ${formatDecimal(data.companyWinLoss)}`,
+    `Company Win Loss: ${formatDecimal(data.companyWinLoss)}`,
   ].join("\n");
 }
 
@@ -32,19 +32,19 @@ function formatMemberWinLoss(data: WinLossResponse) {
   return [
     `Turnover: ${formatDecimal(data.turnover)}`,
     `Gross Commission: ${formatDecimal(data.grossComm)}`,
-    `Member Win/Loss: ${formatDecimal(data.memberWinLoss)}`,
+    `Member Win Loss: ${formatDecimal(data.memberWinLoss)}`,
     `Member Commission: ${formatDecimal(data.memberComm)}`,
     `Member Total: ${formatDecimal(data.memberTotal)}`,
-    `Agent Win/Loss: ${formatDecimal(data.agentWinLoss)}`,
+    `Agent Win Loss: ${formatDecimal(data.agentWinLoss)}`,
     `Agent Commission: ${formatDecimal(data.agentComm)}`,
     `Agent Total: ${formatDecimal(data.agentTotal)}`,
-    `Company Win/Loss: ${formatDecimal(data.companyWinLoss)}`,
+    `Company Win Loss: ${formatDecimal(data.companyWinLoss)}`,
   ].join("\n");
 }
 
 function formatMemberDownlineWinLoss(data: WinLossResponse) {
   return [
-    `Member Win/Loss: ${formatDecimal(data.memberWinLoss)}`,
+    `Member Win Loss: ${formatDecimal(data.memberWinLoss)}`,
     `Member Commission: ${formatDecimal(data.memberComm)}`,
     `Member Total: ${formatDecimal(data.memberTotal)}`,
   ].join("\n");
@@ -66,7 +66,7 @@ function formatWinLoss(data: WinLossResponse, roleId: number) {
 export default function registerWinLossTool(server: McpServer) {
   server.tool(
     "winloss-report",
-    "Retrieves detailed win loss information for a specific customer and role in a range between from date and to date",
+    "[Win Loss Report] Retrieve detailed win loss, turnover, and commission information for a specific customer and role within a date range and product group. Use this tool when the user asks for win loss, turnover, commission, or report details for themselves or their down line. Input required: Customer ID, Role ID (1=Member, 2=Agent, 3=Master, 4=Super), From Date, To Date, and Product Group (e.g., All, Sportsbook, Casino).",
     {
       custId: z.number().min(1).describe("Customer ID"),
       roleId: z
@@ -80,6 +80,8 @@ export default function registerWinLossTool(server: McpServer) {
       toDate: z.string().describe("To date format in YYYY-MM-DD"),
       groupProduct: z
         .string()
+        .default("All")
+        .optional()
         .describe(
           "Group of product to filter (e.g., All for getting all products, Sportsbook for getting Sportsbook only, Casino for getting others products)"
         ),

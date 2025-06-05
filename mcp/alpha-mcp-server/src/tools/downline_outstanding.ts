@@ -33,7 +33,7 @@ function formatDownlineOutstanding(
 export default function registerDownlineOutstandingTool(server: McpServer) {
   server.tool(
     "outstanding-by-username",
-    "Retrieves detailed outstanding information for a specific down line by username of a customer and role",
+    "[Downline Outstanding Lookup] Retrieve detailed outstanding, risk, and exposure information for a specific down line (agent, master, or member) by username, customer ID, and role ID. Use this tool when the user asks for outstanding, risk, exposure, or liability details of a down line, agent, master, or member. Input required: Customer ID, Role ID (2=Agent, 3=Master, 4=Super), and Username.",
     {
       custId: z.number().min(1).describe("Customer ID"),
       roleId: z
@@ -43,7 +43,7 @@ export default function registerDownlineOutstandingTool(server: McpServer) {
         .describe(
           "Customer Role ID (e.g., 4 for Super, 3 for Master, 2 for Agent)"
         ),
-      username: z.string().describe("Username of downline"),
+      username: z.string().describe("Username of down line"),
     },
     async ({ custId, roleId, username }) => {
       const data = await getDownlineOutstanding(custId, roleId, username);

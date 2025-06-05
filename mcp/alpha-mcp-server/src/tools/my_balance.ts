@@ -26,8 +26,8 @@ function formatBalance(data: BalanceInfoResponse, roleId: number) {
     `Yesterday Cash: ${formatDecimal(data.yesterdayCashBalance)}`,
     `Balance: ${formatDecimal(data.totalBalance)}`,
     `Yesterday Balance: ${formatDecimal(data.yesterdayTotalBalance)}`,
-    `Today Win/Loss: ${formatDecimal(data.todayWinLoss)}`,
-    `Yesterday Win/Loss: ${formatDecimal(data.yesterdayWinLoss)}`,
+    `Today Win Loss: ${formatDecimal(data.todayWinLoss)}`,
+    `Yesterday Win Loss: ${formatDecimal(data.yesterdayWinLoss)}`,
     `3rd Party Pending Transfer: ${formatDecimal(data.pendingTransfer3rd)}`,
     `Given Credit: ${formatDecimal(data.givenCredit)}`,
     `${getRoleName(roleId - 1)} Credit: ${formatDecimal(data.memberCredit)}`,
@@ -47,7 +47,7 @@ function formatBalance(data: BalanceInfoResponse, roleId: number) {
 export default function registerMyBalanceTool(server: McpServer) {
   server.tool(
     "my-balance",
-    "Retrieves detailed balance information for a specific customer and role",
+    "[My Balance Lookup] Retrieve detailed balance, outstanding, and credit information for the current customer and role. Use this tool when the user asks for their own balance, outstanding, credit, or financial details. Input required: Customer ID and Role ID (2=Agent, 3=Master, 4=Super).",
     {
       custId: z.number().min(1).describe("Customer ID"),
       roleId: z

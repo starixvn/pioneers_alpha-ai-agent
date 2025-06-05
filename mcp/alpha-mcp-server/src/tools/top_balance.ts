@@ -6,7 +6,7 @@ import { TopBalanceResponse } from "../api/alpha_api.types";
 
 function formatTopBalance(data: TopBalanceResponse[]) {
   const topBalance = data.map((item) => [
-    `${item.username} | ${formatDecimal(item.balance)}`,
+    `${item.username}:  ${formatDecimal(item.balance)}`,
   ]);
 
   return topBalance.join("\n");
@@ -15,7 +15,7 @@ function formatTopBalance(data: TopBalanceResponse[]) {
 export default function registerTopBalanceTool(server: McpServer) {
   server.tool(
     "top-x-balance",
-    "Retrieves a list of top number accounts that have highest balance amount for a specific customer and role",
+    "[Top Balance Lookup] Retrieve a list of accounts with the highest balances for a specific customer and role. Use this tool when the user asks for top balances, richest accounts, or highest balance holders. Input required: Customer ID, Role ID (2=Agent, 3=Master, 4=Super), and the number of top accounts to retrieve.",
     {
       custId: z.number().min(1).describe("Customer ID"),
       roleId: z
@@ -23,7 +23,7 @@ export default function registerTopBalanceTool(server: McpServer) {
         .min(2)
         .max(4)
         .describe(
-          "Customer Role ID (e.g., 4 for Super, 3 for Master, 2 for Agent)"
+          "Customer Role ID (e.g., 4 = Super, 3 = Master, 2 = Agent)"
         ),
       top: z
         .number()
