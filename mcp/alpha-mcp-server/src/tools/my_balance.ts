@@ -47,7 +47,7 @@ function formatBalance(data: BalanceInfoResponse, roleId: number) {
 export default function registerMyBalanceTool(server: McpServer) {
   server.tool(
     "my-balance",
-    "[My Balance Lookup] Retrieve detailed balance, outstanding, and credit information for the current customer and role. Use this tool when the user asks for their own balance, outstanding, credit, or financial details. Input required: Customer ID and Role ID (2=Agent, 3=Master, 4=Super).",
+    "[My Balance Lookup] Retrieve detailed balance and credit information for the current customer and role. Use this tool when the user asks for their own balance, credit, or financial details. Input required: Customer ID and Role ID (2=Agent, 3=Master, 4=Super).",
     {
       custId: z.number().min(1).describe("Customer ID"),
       roleId: z
@@ -55,7 +55,7 @@ export default function registerMyBalanceTool(server: McpServer) {
         .min(2)
         .max(4)
         .describe(
-          "Customer Role ID (e.g., 4 for Super, 3 for Master, 2 for Agent)"
+          "Customer Role ID (e.g., 4 = Super, 3 = Master, 2 = Agent)"
         ),
     },
     async ({ custId, roleId }) => {

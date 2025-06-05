@@ -66,7 +66,7 @@ function formatWinLoss(data: WinLossResponse, roleId: number) {
 export default function registerWinLossTool(server: McpServer) {
   server.tool(
     "winloss-report",
-    "[Win Loss Report] Retrieve detailed win loss, turnover, and commission information for a specific customer and role within a date range and product group. Use this tool when the user asks for win loss, turnover, commission, or report details for themselves or their down line. Input required: Customer ID, Role ID (1=Member, 2=Agent, 3=Master, 4=Super), From Date, To Date, and Product Group (e.g., All, Sportsbook, Casino).",
+    "[Win Loss Report] Retrieve detailed win loss, turnover, and commission information for a specific customer and role within a date range and filter by product group. Use this tool when the user asks for win loss, turnover, commission, or report details for themselves or their down line. Input required: Customer ID, Role ID (1=Member, 2=Agent, 3=Master, 4=Super), From Date, To Date, and Product Group (e.g., All, Sportsbook, Casino).",
     {
       custId: z.number().min(1).describe("Customer ID"),
       roleId: z
