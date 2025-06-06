@@ -73,10 +73,8 @@ export default function registerDownlineBalanceTool(server: McpServer) {
         .number()
         .min(2)
         .max(4)
-        .describe(
-          "Customer Role ID (e.g., 4 = Super, 3 = Master, 2 = Agent)"
-        ),
-      username: z.string().describe("Username of downline"),
+        .describe("Customer Role ID (e.g., 4 = Super, 3 = Master, 2 = Agent)"),
+      username: z.string().describe("Username that you want to look up"),
     },
     async ({ custId, roleId, username }) => {
       let balanceText: string;

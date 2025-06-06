@@ -37,7 +37,8 @@ async function buildResponse<T>(response: Response): Promise<T | null> {
     throw new Error(`HTTP error! status: ${response.status}`);
   }
 
-  return (await response.json()) as T;
+  const json = await response.json();
+  return json ? (json as T) : null;
 }
 
 export function getRoleName(roleId: number) {

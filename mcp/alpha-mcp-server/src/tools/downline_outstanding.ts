@@ -12,10 +12,10 @@ function formatDownlineOutstanding(
     [
       data.name,
       `Member Outstanding: ${formatDecimal(data.memberOutstanding)}`,
+      `${roleName} Outstanding: ${formatDecimal(data.outstanding)}`,
       `Sportsbook Risk Amount/To Win: ${
         data.toWin ? formatDecimal(data.toWin) : "N/A"
       }`,
-      `${roleName} Outstanding: ${formatDecimal(data.outstanding)}`,
       `Sportsbook Risk Amount/${roleName} Risk: ${
         data.riskAmount ? formatDecimal(data.riskAmount) : "N/A"
       }`,
@@ -27,7 +27,7 @@ function formatDownlineOutstanding(
 
   outstandingRows.push(formatOutstandingRow(response.total));
 
-  return outstandingRows.join("\n----------");
+  return outstandingRows.join("\n\n");
 }
 
 export default function registerDownlineOutstandingTool(server: McpServer) {
@@ -43,10 +43,16 @@ export default function registerDownlineOutstandingTool(server: McpServer) {
         .describe(
           "Customer Role ID (e.g., 4 for Super, 3 for Master, 2 for Agent)"
         ),
-      username: z.string().describe("Username of down line"),
+      username: z.string().describe("Username that you want to look up"),
+      system: z.string().describe("System of customer (e.g., MBC, INDO, etc.)"),
     },
-    async ({ custId, roleId, username }) => {
-      const data = await getDownlineOutstanding(custId, roleId, username);
+    async ({ custId, roleId, username, system }) => {
+      const data = await getDownlineOutstanding(
+        custId,
+        roleId,
+        username,
+        system
+      );
 
       return {
         content: [

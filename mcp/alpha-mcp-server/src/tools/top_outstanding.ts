@@ -9,10 +9,10 @@ function formatTopOutstanding(response: OutstandingResponse, roleName: string) {
     [
       `${data.name}${data.isDirectMember ? " (Direct Member)" : ""}`,
       `Member Outstanding: ${formatDecimal(data.memberOutstanding)}`,
+      `${roleName} Outstanding: ${formatDecimal(data.outstanding)}`,
       `Sportsbook Risk Amount/To Win: ${
         data.toWin ? formatDecimal(data.toWin) : "N/A"
       }`,
-      `${roleName} Outstanding: ${formatDecimal(data.outstanding)}`,
       `Sportsbook Risk Amount/${roleName} Risk: ${
         data.riskAmount ? formatDecimal(data.riskAmount) : "N/A"
       }`,
@@ -24,7 +24,7 @@ function formatTopOutstanding(response: OutstandingResponse, roleName: string) {
 
   outstandingRows.push(formatOutstandingRow(response.total));
 
-  return outstandingRows.join("\n----------");
+  return outstandingRows.join("\n\n");
 }
 
 export default function registerTopOutstandingTool(server: McpServer) {
@@ -37,9 +37,7 @@ export default function registerTopOutstandingTool(server: McpServer) {
         .number()
         .min(2)
         .max(4)
-        .describe(
-          "Customer Role ID (e.g., 4 = Super, 3 = Master, 2 = Agent)"
-        ),
+        .describe("Customer Role ID (e.g., 4 = Super, 3 = Master, 2 = Agent)"),
       top: z
         .number()
         .min(1)

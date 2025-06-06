@@ -68,6 +68,7 @@ export async function getDownlineOutstanding(
   custId: number,
   roleId: number,
   username: string,
+  siteLabel: string,
   language: string = "en-US"
 ) {
   const downlineInfo = await getDownlineInfo(custId, username);
@@ -77,8 +78,9 @@ export async function getDownlineOutstanding(
 
   const url = `${ALPHA_API_BASE}/Outstanding/GetDownlineOutstanding?custId=${custId}&custLevelId=${roleId}&downlineId=${
     downlineInfo.custId
-  }&downlineLevelId=${downlineInfo.roleId + 1}&language=${language}`;
-  console.log(url);
+  }&downlineLevelId=${
+    downlineInfo.roleId + 1
+  }&siteLabel=${siteLabel}&language=${language}`;
   return await makeNWSRequest<OutstandingResponse>(url);
 }
 
